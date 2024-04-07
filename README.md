@@ -1,2 +1,2 @@
-# CY-Rencontre
+# Attrape ton geek
 Web project CY-Tech
