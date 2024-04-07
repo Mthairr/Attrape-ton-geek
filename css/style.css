@@ -1,0 +1,26 @@
+#logo {
+  height: 50px;
+}
+
+.bleu {
+  background: linear-gradient(to right, #13005A, #00337C);
+  padding: 10px;
+  margin: -10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#log {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #03C988;
+}
+
+body {
+  background: linear-gradient(to right, #00337C, #1C82AD);
+}
+
+* {
+  color: #03C988;
+}
+
