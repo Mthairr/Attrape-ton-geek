@@ -21,10 +21,10 @@ body{
     display: block;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    background: rgba(53, 55, 210, 0.4);
     padding: 30px 40px;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(20px);
+    /*backdrop-filter: blur(20px);*/
 }
 .wrapper h1{
     font-size: 36px;
@@ -45,15 +45,17 @@ body{
     border: 2px solid rgba(255,255,255,0.2);
     border-radius: 40px;
     font-size: 13px;
-    color: #19aae8;
+    color: #1fd0e7;
+    font-weight: bold;
     padding: 20px 45px 20px 20px;
     cursor: pointer;
 }
 .input-box input::placeholder{
     color: #03C988;
+    font-weight: bold;
 }
 .text1:focus{
-    color: #19aae8;
+    color: #1fd0e7;
     font-weight: bold;
 }
 *:focus::placeholder{
@@ -87,7 +89,7 @@ body{
     color: black;
 }
 .btn:hover{
-    background: rgba(3, 201, 136, 0.2);
+    background: rgba(3, 201, 136, 0.35);
 }
 .wrapper .register-link{
     text-align: center;
