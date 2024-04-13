@@ -4,6 +4,7 @@
     font-family: 'Oxygen', sans-serif;
     box-sizing: border-box;
 }
+
 body{
     background-image: url("../img/img2.jpg");
     /*background-image: url("../img1.jpg");*/
@@ -30,10 +31,10 @@ body{
     box-sizing: border-box;
     border-bottom: 1px solid rgba(3, 201, 136, 0.3);
 }
-
-.logo {
+  .logo {
     height: 75px;
 }
+
 
 .wrapper{
     width: 420px;
@@ -111,13 +112,8 @@ body{
 .btn:hover{
     background: rgba(3, 201, 136, 0.35);
 }
-.wrapper .register-link{
-    text-align: center;
-    font-size: 14.5px;
-    margin-top: 20px;
+
+.wrapper .select-one{
+    justify-content: left;
 }
-.register-link p a{
-    color: #19aae8;
-    text-decoration: none;
-    font-weight: bold;
-}
+
