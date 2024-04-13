@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("../img/img2.jpg");
+    /*background-image: url("../img1.jpg");*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    background: linear-gradient(to right, rgba(19, 0, 90, 0.3), rgba(0, 51, 124, 0.3));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(3, 201, 136, 0.3);
+}
+
+.logo {
+    height: 75px;
+}
+
+.wrapper{
+    width: 420px;
+    color: #03C988;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: rgba(53, 55, 210, 0.4);
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /*backdrop-filter: blur(20px);*/
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 40px;
+    font-size: 13px;
+    color: #1fd0e7;
+    font-weight: bold;
+    padding: 20px 45px 20px 20px;
+    cursor: pointer;
+}
+.input-box input::placeholder{
+    color: #03C988;
+    font-weight: bold;
+}
+.text1:focus{
+    color: #1fd0e7;
+    font-weight: bold;
+}
+*:focus::placeholder{
+    opacity: 0;
+}
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 15px;
+    font-size: 14.5px;
+}
+.remember-forgot label input{
+    margin-right: 4px;
+}
+.remember-forgot a{
+    text-decoration: none;
+    color: #19aae8;
+    font-weight: bold;
+}
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+.btn:hover{
+    background: rgba(3, 201, 136, 0.35);
+}
+.wrapper .register-link{
+    text-align: center;
+    font-size: 14.5px;
+    margin-top: 20px;
+}
+.register-link p a{
+    color: #19aae8;
+    text-decoration: none;
+    font-weight: bold;
+}
