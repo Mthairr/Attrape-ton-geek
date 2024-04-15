@@ -75,6 +75,17 @@ body{
     color: #03C988;
     font-weight: bold;
 }
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-box.age{
+    width: calc(50% - 5px);
+}
+.input-box.select-one{
+    width: calc(50% - 5px);
+}
 .text1:focus{
     color: #1fd0e7;
     font-weight: bold;
