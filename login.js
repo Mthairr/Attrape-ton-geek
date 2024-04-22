@@ -1,4 +1,4 @@
-document.getElementById('LoginForm').addEventListener('submit', function(eveent){
+document.getElementById('LoginForm').addEventListener('submit', function(event){
     event.preventDefault();
 
     var username = document.getElementById('username').value;
@@ -10,3 +10,6 @@ document.getElementById('LoginForm').addEventListener('submit', function(eveent)
     window.location.href = "Profil.html"
 
 });
+function index(){
+    document.location.href="index.html"
+}
