@@ -33,3 +33,6 @@ document.getElementById('SignupForm').addEventListener('submit', function(event)
     localStorage.setItem('utilisateur', utilisateurJSON);
     window.location.href="Bienvenue.html";
 });
+function index(){
+    document.location.href="index.html"
+}
