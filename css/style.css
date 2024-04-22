@@ -79,7 +79,35 @@ body {
   background: linear-gradient(to right, #00337C, #1C82AD);
 }
 */
-
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.title{
+  width: 600px;
+  color: #03C988;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background: rgba(53, 55, 210, 0.4);
+  padding: 30px 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+}
+.title h1{
+  color: #19aae8;
+}
+.title p{
+  color: #03C988;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.title p{
+  margin-top: 20px;
+}
 * {
   color: #03C988;
 }
