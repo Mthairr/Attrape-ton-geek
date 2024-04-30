@@ -1,0 +1,35 @@
+*{
+    color: #03C988;
+}
+h1{
+    justify-content: right;
+    align-items: center;
+}
+.navbar{
+    position: fixed;
+    background: linear-gradient(to right, rgba(19, 0, 90, 0.3), rgba(0, 51, 124, 0.3));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(3, 201, 136, 0.3);
+}
+.menu a.active{
+    background-color: #03C988;
+    color: white;
+}
+.logo{
+    height: 75px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.content{
+    margin-top: 150px;
+}

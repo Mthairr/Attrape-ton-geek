@@ -1,0 +1,112 @@
+
+body{
+  background-image: url("../img/img2.jpg");
+  /*background-image: url("../img1.jpg");*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  height: auto;
+}
+@media(max-width: 768px){
+  body{
+    background-size: cover;
+  }
+  #btn2{
+    margin-top: 300px;
+  }
+}
+@media(max-width: 576px){
+  body{
+    background-size: auto;
+  }
+}
+
+.navbar {
+  position: fixed;
+  background: linear-gradient(to right, rgba(19, 0, 90, 0.3), rgba(0, 51, 124, 0.3));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(3, 201, 136, 0.3);
+}
+.logo {
+  height: 75px;
+}
+.buttons button{
+  border-radius: 13px;
+  margin-left: 10px;
+}
+#btn1{
+  width: 200px;
+  height: 50px;
+  justify-content: right;
+  background: linear-gradient(to right, rgba(19, 0, 90, 0.8), rgba(0, 51, 124, 0.8));
+  border: none;
+  font-size: 25px;
+}
+#btn2{ 
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  /*margin: 0 auto;
+  margin-top: 500px;*/
+  border: none;
+  background: linear-gradient(to right, rgba(19, 0, 90, 0.8), rgba(0, 51, 124, 0.8));
+  font-size: 25px;
+  text-decoration: none;
+}
+#btn2:hover{
+  background: linear-gradient(to right, rgba(19, 0, 90, 0.5), rgba(0, 51, 124, 0.5));
+  font-weight: bold;
+}
+#btn1:hover{
+  background: linear-gradient(to right, rgba(19, 0, 90, 0.5), rgba(0, 51, 124, 0.5));
+  font-weight: bold;
+}
+/*
+body {
+  background: linear-gradient(to right, #00337C, #1C82AD);
+}
+*/
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.title{
+  width: 600px;
+  color: #03C988;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  /*background: rgba(53, 55, 210, 0.4);*/
+  background: linear-gradient(to bottom, rgba(51, 51, 148, 0.45), rgba(0, 0, 255, 0.45));
+  padding: 30px 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+}
+.title h1{
+  color: #19aae8;
+}
+.title p{
+  color: #03C988;
+  font-weight: bold;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.title p{
+  margin-top: 20px;
+}
+* {
+  color: #03C988;
+}
+
