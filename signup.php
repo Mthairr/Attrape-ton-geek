@@ -54,6 +54,10 @@
                 if(isset($_GET['d'])){
                     echo "<p id='error'>please enter a valid informations</p>";
                 }
+
+                if(count($_COOKIE) > 0){
+                    header('Location: Bienvenue.html');
+                }
                 ?>
     
             </form>

@@ -30,6 +30,10 @@
             if(isset($_GET['d'])){
                 echo "<p id='error'>please enter a valid username or password</p>";
             }
+
+            if(count($_COOKIE) > 0){
+                header('Location: Bienvenue.html');
+            }
             ?>
             <div class="register-link">
                 <p>Dont have an account ? <a href="signup.html">Register</a></p>

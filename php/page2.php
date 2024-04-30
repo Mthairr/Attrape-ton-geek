@@ -30,6 +30,7 @@ if(!(strpos($_POST["username"], ' ') === false) || $_POST["password"] != $_POST[
     header('Location: ../signup.php?d=1');
 }
 else{
+    file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . $_POST["password"] . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"], FILE_APPEND);
     echo "age : " . $_POST["age"] . "<br> selct : " . $_POST["sexualindentity"] . "<br> username : " . $_POST["username"] . "<br>" . "password : " . $_POST["password"];
 }
 

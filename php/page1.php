@@ -2,11 +2,11 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     try{
         if(!isset($_POST["username"]) || empty($_POST["username"])){
-            header('Location: index.php');
+            header('Location: ../Login.php?d=1');
             throw new Exception("Le nom est incorrect");
         }
         if(!isset($_POST["password"]) || empty($_POST["password"])){
-            header('Location: index.php');
+            header('Location: ../Login.php?d=1');
             throw new Exception("Le password est incorrect");
         }
     }
@@ -18,7 +18,22 @@ if(!(strpos($_POST["username"], ' ') === false)){
     header('Location: ../Login.php?d=1');
 }
 else{
-    echo $_POST["username"] . "<br>" . "password : " . $_POST["password"];
+    $fileLines = count(file("../donnee/log.txt"));
+    $file = fopen("../donnee/log.txt", "c+");
+    for($i=1; $i<=$fileLines; $i++){
+        $tab = explode(";" ,fgets($file));
+        if($tab[0] == $_POST["username"]){
+            if($tab[1] == $_POST["password"]){
+                setcookie("username", $_POST["username"], time()+ 3600, "/");
+                setcookie("password", $_POST["password"], time()+ 3600, "/");
+                header('Location: ../Bienvenue.html');
+            }
+            else{
+                header('Location: ../Login.php?d=1');
+            }
+        }
+    }
+    header('Location: ../Login.php?d=1');
 }
 
 ?>
