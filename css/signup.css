@@ -45,6 +45,7 @@ body{
     background: rgba(53, 55, 210, 0.4);
     padding: 30px 40px;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
     /*backdrop-filter: blur(20px);*/
 }
 .wrapper h1{
@@ -128,3 +129,7 @@ body{
     justify-content: left;
 }
 
+#error {
+    color: red;
+    font-size: 12px;
+}

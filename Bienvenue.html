@@ -6,21 +6,27 @@
     <title>Attrape ton geek - Bienvenue</title>
     <meta name="description" content="">
     <link rel="icon" href="favicon2.ico" sizes="any">
+    <link rel="stylesheet" href="css/profil.css">
 </head>
 <body>
-<h1>Bienvenue ! Vous êtes connecté</h1>
-<div id="userData"></div>
+
+
+<nav class="navbar">
+    <img src="img/_6b17619c-9f60-47a6-a1dc-98336a5b2e7a-removebg-preview.png" alt="Logo" class="logo" onclick="index()">
+    <div class="menu">
+        <a class="active" href="#">Votre profil</a>
+        <a href="#1">1</a>
+        <a href="#2">2</a>
+        <a href="#3">3</a>
+
+    </div>
+</nav>
+<div class="content">
+<h1>Votre profil</h1>
+</div>
 
 <script>
-    /*var utilisateurJSON = localStorage.getItem('utilisateur');
-    var utilisateur = JSON.parse(utilisateurJSON);
 
-    // Afficher les données de l'utilisateur sur la page
-    var userDataDiv = document.getElementById('userData');
-    userDataDiv.innerHTML = `
-            <p>Nom d'utilisateur : ${utilisateur.username}</p>
-            <p>Genre : ${utilisateur.gender}</p>
-            <p>Âge : ${utilisateur.age}</p>*/
 </script>
 </body>
 </html>
