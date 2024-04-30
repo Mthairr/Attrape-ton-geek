@@ -5,5 +5,5 @@ function login(){
     document.location.href="Login.php";
 }
 function index(){
-    document.location.href="index.html"
+    document.location.href="index.php";
 }
