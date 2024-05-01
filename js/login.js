@@ -10,6 +10,3 @@ document.getElementById('LoginForm').addEventListener('submit', function(event){
     window.location.href = "Profil.html"
 
 });
-function index(){
-    document.location.href="index.html"
-}

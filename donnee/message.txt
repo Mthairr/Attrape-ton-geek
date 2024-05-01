@@ -1,0 +1,9 @@
+1;salut ouais;aaaa;bbbbb;
+2;salut;aaaa;bbbbb;
+3;salut1;aaaa;bbbbb;
+4;T'es qui;bbbbb;aaaa;
+5;aaaaaa;aaaa;bbbbb;
+6;aaaa*;aaaa;bbbbb;
+7;Pourquoi ?;aaaa;bbbbb;
+8;dfgfdsg<br />  sfdgsfdg;aaaa;bbbbb;
+9;arrete d'envoyer des messages;aaaa;bbbbb;

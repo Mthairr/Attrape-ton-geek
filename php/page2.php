@@ -24,14 +24,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     catch(Exception $e){
         echo $e->getMessage();
+        exit();
     }
-}
-if(!(strpos($_POST["username"], ' ') === false) || $_POST["password"] != $_POST["password2"]){
-    header('Location: ../signup.php?d=1');
-}
-else{
+
+    if(!(strpos($_POST["username"], ' ') === false) || $_POST["password"] != $_POST["password2"]){
+        header('Location: ../signup.php?d=1');
+        exit();
+    }
+    $fileLines = count(file("../donnee/log.txt"));
+    $file = fopen("../donnee/log.txt", "c+");
+    for($i=1; $i<=$fileLines; $i++){
+        $tab = explode(";" ,fgets($file));
+        if($tab[0] == $_POST["username"]){
+            header('Location: ../signup.php?d=1');
+            exit();
+        }
+    }
     file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . $_POST["password"] . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"], FILE_APPEND);
-    echo "age : " . $_POST["age"] . "<br> selct : " . $_POST["sexualindentity"] . "<br> username : " . $_POST["username"] . "<br>" . "password : " . $_POST["password"];
 }
 
 ?>

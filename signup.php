@@ -47,24 +47,25 @@
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>
                 </div>
-                
-    
-                <button type="submit" class="btn">Sign up</button>
-                <?php
-                if(isset($_GET['d'])){
-                    echo "<p id='error'>please enter a valid informations</p>";
-                }
 
-                if(count($_COOKIE) > 0){
-                    header('Location: Bienvenue.html');
-                }
+
+                <button type="submit" class="btn">Sign up</button>
+
+                <?php
+                    if(isset($_GET['d'])){
+                        echo "<p id='error'>please enter a valid informations</p>";
+                    }
+
+                    if(count($_COOKIE) > 0){
+                        header('Location: Bienvenue.php');
+                    }
                 ?>
-    
+
             </form>
         </div>
 
 
 
-        <script src="js/signup.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>

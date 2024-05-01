@@ -14,7 +14,7 @@
 <body>
     <?php
         if(count($_COOKIE) > 0){
-            header('Location: Bienvenue.html');
+            header('Location: Bienvenue.php');
         }
     ?>
 
@@ -32,8 +32,8 @@
     <br><p>Bienvenue sur Attrape Ton Geek, où les univers virtuels se rencontrent pour créer des liens réels. Rencontrez des esprits brillants qui partagent votre passion pour les jeux, la technologie et la culture geek.</p><br> 
     <p>Rejoignez-nous dès maintenant et découvrez une communauté où l'amour est codé dans chaque ligne !</p>
   </div>
-  
-  
+
+
   <script src="js/app.js"></script>
 
 </body>

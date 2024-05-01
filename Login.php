@@ -32,7 +32,7 @@
             }
 
             if(count($_COOKIE) > 0){
-                header('Location: Bienvenue.html');
+                header('Location: Bienvenue.php');
             }
             ?>
             <div class="register-link">

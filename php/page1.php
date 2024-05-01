@@ -26,7 +26,7 @@ else{
             if($tab[1] == $_POST["password"]){
                 setcookie("username", $_POST["username"], time()+ 3600, "/");
                 setcookie("password", $_POST["password"], time()+ 3600, "/");
-                header('Location: ../Bienvenue.html');
+                header('Location: ../Bienvenue.php');
             }
             else{
                 header('Location: ../Login.php?d=1');
