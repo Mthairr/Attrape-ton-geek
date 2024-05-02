@@ -7,3 +7,15 @@
 7;Pourquoi ?;aaaa;bbbbb;
 8;dfgfdsg<br />  sfdgsfdg;aaaa;bbbbb;
 9;arrete d'envoyer des messages;aaaa;bbbbb;
+10;oe de fou<br />  ;aaaa;aaaaa;
+11;déso j'aurai du dire bonjour;aaaa;aaaaa;
+12;Arrête de me déranger stp;aaaaa;aaaa;
+13;Salut ! ça serait cool que tu arrêtes. Merci !;bbbbb;aaaa;
+14;déso c'est car je sui trop crazy 🤣;aaaa;aaaaa;
+15;Salut !;aaaaa;bbbbb;
+16;Je ne t'ai pas déjà dit d'arrêter ?;bbbbb;aaaaa;
+17;Pas du tout je suis nouveau, première fois que je te parle;aaaaa;bbbbb;
+18;Ah désolé je t'ai confondu avec quelqu'un d'autre;bbbbb;aaaaa;
+19;Ce ne serait pas avec "aaaa" par hasard ?;aaaaa;bbbbb;
+20;Si exactement ! Toi aussi il te fait chier ?;bbbbb;aaaaa;
+21;Bah je lui pas trop parlé, juste il est venu en mp sans trop se présenter;aaaaa;bbbbb;

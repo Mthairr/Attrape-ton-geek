@@ -22,11 +22,8 @@ if(count($_COOKIE) == 0){
         <button type="submit" name="log_out">Log out</button>
     </form>
     <div class="menu">
-        <a class="active" href="#">Votre profil</a>
-        <a href="#1">1</a>
-        <a href="#2">2</a>
-        <a href="#3">3</a>
-
+        <a class="active" href="profil.php">Votre profil</a>
+        <a href="message.php">Message</a>
     </div>
 </nav>
 <div class="content">

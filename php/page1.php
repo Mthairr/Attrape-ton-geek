@@ -24,12 +24,17 @@ else{
         $tab = explode(";" ,fgets($file));
         if($tab[0] == $_POST["username"]){
             if($tab[1] == $_POST["password"]){
-                setcookie("username", $_POST["username"], time()+ 3600, "/");
-                setcookie("password", $_POST["password"], time()+ 3600, "/");
+                //setcookie("username", $_POST["username"], time()+ 3600, "/");
+                //setcookie("password", $_POST["password"], time()+ 3600, "/");
+                session_start();
+                $_SESSION['username'] = $_POST["username"];
+                $_SESSION['password'] = $_POST['password'];
                 header('Location: ../Bienvenue.php');
+                exit();
             }
             else{
                 header('Location: ../Login.php?d=1');
+                exit();
             }
         }
     }

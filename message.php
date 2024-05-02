@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/login.css">
     <meta name="description" content="">
     <link rel="icon" href="favicon2.ico" sizes="any">
+    <script src="js/app.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -14,23 +15,32 @@
     </nav>
     <div class="wrapper">
         <?php
+            session_start();
+
             if(count($_COOKIE) == 0){
                 header('Location: index.php');
                 exit();
             }
 
+            $fileLines = count(file("donnee/log.txt"));
+            $file = fopen("donnee/log.txt", "c+");
             if(!isset($_GET['username'])){
-                echo "<p id='error'>User don't existe</p>";
+                echo "List of persons : <br><br>";
+                for($i=1; $i<=$fileLines; $i++){
+                    $tab = explode(";" ,fgets($file));
+                     if($tab[0] != $_SESSION["username"]){
+                        echo "<a style='color:yellow;' href='message.php?username=" . $tab[0] ."'>". $tab[0] ."</a><br><br>";
+                     }
+                }
                 exit();
             }
 
-            if($_GET['username'] == $_COOKIE['username']){
+            if($_GET['username'] == $_SESSION['username']){
                 echo "<p id='error'>You can't send message to yourself</p>";
                 exit();
             }
+
             $rep=0;
-            $fileLines = count(file("donnee/log.txt"));
-            $file = fopen("donnee/log.txt", "c+");
             for($i=1; $i<=$fileLines; $i++){
                 $tab = explode(";" ,fgets($file));
                 if($tab[0] == $_GET["username"]){
@@ -53,7 +63,7 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST["message"]) && !empty($_POST["message"])){
                     $fileLines = $fileLines + 1;
-                    file_put_contents('donnee/message.txt', "\n" . $fileLines . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_COOKIE["username"] . ';' . $_GET["username"] . ";", FILE_APPEND);
+                    file_put_contents('donnee/message.txt', "\n" . $fileLines . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";", FILE_APPEND);
                 }
             }
             ?>
@@ -73,6 +83,5 @@
 
         load_messages();
     </script>
-    <script src="js/app.js"></script>
 </body>
 </html>

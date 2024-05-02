@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             exit();
         }
     }
-    file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . $_POST["password"] . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"], FILE_APPEND);
+    file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . $_POST["password"] . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"] . ";", FILE_APPEND);
 }
 
 ?>
