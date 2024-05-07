@@ -7,3 +7,6 @@ function signup(){
 function login(){
     document.location.href="Login.php";
 }
+function updateprofile(){
+    document.location.href="updateprofile.php"
+}

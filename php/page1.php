@@ -23,7 +23,7 @@ else{
     for($i=1; $i<=$fileLines; $i++){
         $tab = explode(";" ,fgets($file));
         if($tab[0] == $_POST["username"]){
-            if($tab[1] == $_POST["password"]){
+            if($tab[1] == hash('sha512',$_POST["password"])){
                 //setcookie("username", $_POST["username"], time()+ 3600, "/");
                 //setcookie("password", $_POST["password"], time()+ 3600, "/");
                 session_start();

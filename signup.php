@@ -39,7 +39,7 @@
                     </div>
                     <div class="age">
                         <select name="age" id="age">
-                            <option value="" disbaled selected>Choose your age</option>
+                            <option value="" disabled selected>Choose your age</option>
                         </select>
                     </div>
                 </div>
@@ -67,5 +67,6 @@
 
 
         <script src="js/app.js"></script>
+        <script src="js/signup.js"></script>
     </body>
 </html>

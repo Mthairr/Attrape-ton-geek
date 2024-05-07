@@ -28,6 +28,7 @@ if(count($_COOKIE) == 0){
 </nav>
 <div class="content">
 <h1>Votre profil</h1>
+<button type="submit" onclick="updateprofile()">Modifier votre profil ?</button>
 </div>
 
 <script src="js/app.js"></script>

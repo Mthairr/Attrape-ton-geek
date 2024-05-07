@@ -49,7 +49,7 @@
                 }
             }
             if($rep == 0){
-                echo "<p id='error'>User don't existe</p>";
+                echo "<p id='error'>User doesn't exist</p>";
                 exit();
             }
         ?>
