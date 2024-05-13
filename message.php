@@ -12,6 +12,13 @@
 <body>
     <nav class="navbar">
         <img src="img/_6b17619c-9f60-47a6-a1dc-98336a5b2e7a-removebg-preview.png" alt="Logo" class="logo" onclick="index()">
+        <form method="post" action="php/page3.php">
+            <button type="submit" name="log_out">Log out</button>
+        </form>
+        <ul class="menu">
+            <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
+            <li><a class="active1" href="message.php">Message</a></li>
+        </ul>
     </nav>
     <div class="wrapper">
         <?php

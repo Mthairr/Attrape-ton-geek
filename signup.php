@@ -38,9 +38,10 @@
                         </select>
                     </div>
                     <div class="age">
-                        <select name="age" id="age">
-                            <option value="" disabled selected>Choose your age</option>
-                        </select>
+                        <label>
+                            Votre date de naissance :
+                            <input type="date" name="age"/>
+                        </label>
                     </div>
                 </div>
 
@@ -52,6 +53,7 @@
                 <button type="submit" class="btn">Sign up</button>
 
                 <?php
+                    
                     if(isset($_GET['d'])){
                         echo "<p id='error'>please enter a valid informations</p>";
                     }

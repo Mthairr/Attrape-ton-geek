@@ -36,7 +36,7 @@
             }
             ?>
             <div class="register-link">
-                <p>Dont have an account ? <a href="signup.html">Register</a></p>
+                <p>Dont have an account ? <a href="signup.php">Register</a></p>
             </div>
         </form>
     </div>

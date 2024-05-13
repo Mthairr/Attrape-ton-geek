@@ -31,6 +31,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header('Location: ../signup.php?d=1');
         exit();
     }
+    $date = $_POST["age"];
+    $ajd = new DateTime();
+    $date = new DateTime($date);
+    $diff = $ajd->diff($date);
+    $age = $diff->y;
+    if($age < 18){
+        header("Location: forbidden.php");
+        exit();
+    }
     $fileLines = count(file("../donnee/log.txt"));
     $file = fopen("../donnee/log.txt", "c+");
     for($i=1; $i<=$fileLines; $i++){

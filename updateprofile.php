@@ -21,10 +21,10 @@ if(count($_COOKIE) == 0){
     <form method="post" action="php/page3.php">
         <button type="submit" name="log_out">Log out</button>
     </form>
-    <div class="menu">
-        <a class="active" href="profil.php">Votre profil</a>
-        <a href="message.php">Message</a>
-    </div>
+    <ul class="menu">
+        <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
+        <li><a href="message.php">Message</a></li>
+    </ul>
 </nav>
 <div class="content">
 <h1>Votre profil</h1>

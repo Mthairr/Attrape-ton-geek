@@ -1,6 +1,7 @@
 *{
     color: #03C988;
 }
+
 h1{
     justify-content: right;
     align-items: center;
@@ -23,6 +24,25 @@ button{
     align-items: center;
     box-sizing: border-box;
     border-bottom: 1px solid rgba(3, 201, 136, 0.3);
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+.navbar ul{
+    list-style-type: none;
+    background-color: rgba(3, 201, 136, 0.3);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.navbar li{
+    float: left;
+}
+.navbar a:hover{
+    background-color: rgba(53, 125, 224, 0.3);
 }
 .menu a.active{
     background-color: #03C988;
