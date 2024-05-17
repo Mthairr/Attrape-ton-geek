@@ -44,7 +44,7 @@ button{
 .navbar a:hover{
     background-color: rgba(53, 125, 224, 0.3);
 }
-.menu a.active{
+.menu a.active2{
     background-color: #03C988;
     color: white;
 }
@@ -55,12 +55,7 @@ a{
     text-decoration: none;
     color: white;
 }
-.content{
-    margin-top: 150px;
-}
-fieldset{
-    width: auto;
-}
+
 .navbar form button {
     background-color: #ff4b5c;
     color: white;
@@ -69,4 +64,67 @@ fieldset{
     cursor: pointer;
     border-radius: 5px;
 }
+.search {
+    max-width: 600px;
+    margin: 150px auto 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
+.search h1 {
+    margin-top: 0;
+}
+.search input,
+.search select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search select {
+    padding: 10px;
+}
+
+.select-one {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.select-one p {
+    margin: 0 0 5px;
+}
+
+.search button {
+    width: 100%;
+    padding: 10px;
+    background-color: #03C988;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #029a75;
+}
+.search button {
+    width: 100%;
+    padding: 10px;
+    background-color: #03C988;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: #029a75;
+}
