@@ -51,9 +51,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . hash('sha512',$_POST["password"]) . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"] . ";", FILE_APPEND);
     session_start();
+    $_SESSION["username"] = $_POST["username"];
     $_SESSION['username'] = $_POST["username"];
     $_SESSION['password'] = $_POST['password'];
-    header('Location: ../Bienvenue.php');
+    header('Location: ../signup2.php');
 }
 
 ?>
