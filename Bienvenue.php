@@ -24,6 +24,7 @@ if(count($_COOKIE) == 0){
     <ul class="menu">
         <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
         <li><a href="message.php">Message</a></li>
+        <li><a href="search.php">Recherche</a></li>
     </ul>
 </nav>
 <div class="content">
