@@ -37,7 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $diff = $ajd->diff($date);
     $age = $diff->y;
     if($age < 18){
-        header("Location: forbidden.php");
+        header("Location: ../forbidden.php");
         exit();
     }
     $fileLines = count(file("../donnee/log.txt"));
