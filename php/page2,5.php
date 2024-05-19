@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header('Location: ../signup2.php?d=7');
             throw new Exception("Le pays est incorrect");
         }
-        if(!isset($_FILES["img"])){
+        if(!isset($_FILES["img"]) || empty($_FILES["img"]) || $_FILES["size"] > 5242880){
             header('Location: ../signup2.php?d=8');
             throw new Exception("Le pays est incorrect");
         }
@@ -43,8 +43,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header('Location: ../signup2.php?d=10');
         exit();
     }
-    $fileLines = count(file("../donnee/account.txt"));
-    $file = fopen("../donnee/account.txt", "c+");
+    $fileLines = count(file("../donnee/log.txt"));
+    $file = fopen("../donnee/log.txt", "c+");
     for($i=1; $i<=$fileLines; $i++){
         $tab = explode(";" ,fgets($file));
         if($tab[0] == $_POST["email"]){
@@ -53,8 +53,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
     }
     session_start();
-    move_uploaded_file($_FILES["img"]["tmp_name"], "../img/");
-    file_put_contents('../donnee/log.txt', "\n" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";" . $_FILES["img"]["tmp_name"] . ";", FILE_APPEND); 
+    move_uploaded_file($_FILES["img"]["tmp_name"], "../img/" . $_SESSION["username"] . "." . pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION));
+    file_put_contents('../donnee/log.txt', "\n" . $_SESSION["username"] . ';' . hash('sha512',$_SESSION["password"]) . ';' . $_SESSION["age"] . ';' . $_SESSION["sexualindentity"] . ";" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";", FILE_APPEND);
     $_SESSION['email'] = $_POST["email"];
     $_SESSION['name'] = $_POST['name'];
     $_SESSION['lastname'] = $_POST['lastname'];

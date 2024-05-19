@@ -16,7 +16,7 @@
         </nav>
 
         <div class="wrapper">
-            <form method="post" action="php/page2,5.php">
+            <form method="post" action="php/page2,5.php" enctype="multipart/form-data">
                 <h1>~ Sign up ~</h1>
                 <div class="input-box">
                     <input type="text", placeholder="Name" class="text1" name="name">

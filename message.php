@@ -71,6 +71,9 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST["message"]) && !empty($_POST["message"])){
                     $fileLines = $fileLines + 1;
+                    if(strpos($_POST["message"], ';') !== false){
+                        $_POST["message"] = str_replace(';', '%69', $_POST["message"]);
+                    }
                     file_put_contents('donnee/message.txt', "\n" . $fileLines . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";", FILE_APPEND);
                 }
             }

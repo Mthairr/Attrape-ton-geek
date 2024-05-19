@@ -40,20 +40,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header("Location: ../forbidden.php");
         exit();
     }
-    $fileLines = count(file("../donnee/log.txt"));
-    $file = fopen("../donnee/log.txt", "c+");
-    for($i=1; $i<=$fileLines; $i++){
-        $tab = explode(";" ,fgets($file));
-        if($tab[0] == $_POST["username"]){
-            header('Location: ../signup.php?d=1');
-            exit();
-        }
-    }
-    file_put_contents('../donnee/log.txt', "\n" . $_POST["username"] . ';' . hash('sha512',$_POST["password"]) . ';' . $_POST["age"] . ';' . $_POST["sexualindentity"] . ";", FILE_APPEND);
     session_start();
     $_SESSION["username"] = $_POST["username"];
-    $_SESSION['username'] = $_POST["username"];
+    $_SESSION['age'] = $_POST["age"];
     $_SESSION['password'] = $_POST['password'];
+    $_SESSION["sexualindentity"] = $_POST["sexualindentity"];
     header('Location: ../signup2.php');
 }
 
