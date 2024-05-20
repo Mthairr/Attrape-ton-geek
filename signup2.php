@@ -40,12 +40,40 @@
                     <input type="text" placeholder="Country" class="text1" name="country">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Adress" class="text1" name="adress">
+                    <p>I'm interested in :</p>
+                    <select class="gender" name="target_gender">
+                        <option value="null"></option>
+                        <option value="Man">Man</option>
+                        <option value="Woman">Woman</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
                 <div class="input-box">
+                <p>your height :</p>
+                    <select class="height" name="height" >
+                    <?php
+                    for ($i = 0; $i <= 230; $i++) {
+                        echo "<option value=\"$i\">$i cm</option>";
+                    }
+                    ?>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <p>Your eyes color:</p>
+                    <select class="eyes" name="eyes">
+                        <option value="null"></option>
+                        <option value="Blue">Blue</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Green">Green</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Amber">Amber</option>
+                        <option value="Hazel">Hazel</option>
+                    </select>
+                </div>
+                <div class="input-box  character">
                     <input type="text" placeholder="Favourite video game character" class="text1" name="character">
                 </div>
-                <div class="input-box">
+                <div class="input-box img">
                     <input type="file" name="img" accept="image/png, image/jpeg">
                 </div>
 
@@ -53,7 +81,6 @@
                 <button type="submit" class="btn">Sign up</button>
 
                 <?php
-                    
                     if(isset($_GET['d'])){
                         echo "<p id='error'>please enter a valid informations</p>";
                     }
