@@ -10,3 +10,23 @@ function login(){
 function updateprofile(){
     document.location.href="updateprofile.php"
 }
+function results_search(){
+    document.location.href="results_search.php"
+}
+
+function rechercher() {
+    var termeRecherche = document.getElementById('search').value;
+    if (termeRecherche.length > 0) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById('resultats').innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send('search=' + encodeURIComponent(termeRecherche));
+    } else {
+        document.getElementById('resultats').innerHTML = ''; // Efface les résultats si la recherche est vide
+    }
+}
