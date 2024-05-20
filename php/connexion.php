@@ -6,8 +6,8 @@
         for($i=1; $i<=$fileLines; $i++){
             $tab = explode(";" ,fgets($file));
             if($tab[0] == $_GET["username"]){
-                $_SESSION['username'] = $_POST["username"];
-                $_SESSION['password'] = $_POST['password'];
+                $_SESSION['username'] = $tab[0];
+                $_SESSION['password'] = $tab[1];
                 $_SESSION['age'] = $tab[2];
                 $_SESSION['sexualindentity'] = $tab[3];
                 $_SESSION['email'] = $tab[4];

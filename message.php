@@ -75,14 +75,20 @@
             <button type="submit" class="btn">Send</button>
             <section id=message></section>
             <?php
-            $fileLines = count(file("donnee/message.txt"));
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST["message"]) && !empty($_POST["message"])){
-                    $fileLines = $fileLines + 1;
+                    $tab = file('donnee/message.txt');
+                    $fileLines = count($tab);
+                    if($fileLines == 0){
+                        $tab[0] = 0;
+                    }
+                    else{
+                        $tab = explode(";" ,$tab[count($tab)-1]);
+                    }
                     if(strpos($_POST["message"], ';') !== false){
                         $_POST["message"] = str_replace(';', '%69', $_POST["message"]);
                     }
-                    file_put_contents('donnee/message.txt', "\n" . $fileLines . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";", FILE_APPEND);
+                    file_put_contents('donnee/message.txt', $tab[0]+1 . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";" . "\n", FILE_APPEND);
                 }
             }
             ?>
