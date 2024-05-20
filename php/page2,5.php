@@ -77,6 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $_SESSION['target_gender'] = $_POST['target_gender'];
     $_SESSION['height'] = $_POST['height'];
     $_SESSION['eyes'] = $_POST['eyes'];
+    $_SESSION["admin"] = 0;
     header('Location: ../Bienvenue.php');
 }
 

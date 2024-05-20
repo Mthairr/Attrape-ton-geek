@@ -160,6 +160,15 @@ body{
     cursor: pointer;
     border-radius: 5px;
 }
+.admin {
+    background-color: #f08811;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .report-btn {
     background-color: rgba(205, 3, 3, 0.65);
     color: white;

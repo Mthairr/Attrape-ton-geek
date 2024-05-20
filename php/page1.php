@@ -2,11 +2,11 @@
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     try{
         if(!isset($_POST["username"]) || empty($_POST["username"])){
-            header('Location: ../Login.php?d=1');
+            header('Location: ../Login.php?d=5');
             throw new Exception("Le nom est incorrect");
         }
         if(!isset($_POST["password"]) || empty($_POST["password"])){
-            header('Location: ../Login.php?d=1');
+            header('Location: ../Login.php?d=4');
             throw new Exception("Le password est incorrect");
         }
     }
@@ -14,8 +14,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo $e->getMessage();
     }
 }
+
 if(!(strpos($_POST["username"], ' ') === false)){
-    header('Location: ../Login.php?d=1');
+    header('Location: ../Login.php?d=3');
 }
 else{
     $fileLines = count(file("../donnee/log.txt"));
@@ -27,6 +28,11 @@ else{
                 //setcookie("username", $_POST["username"], time()+ 3600, "/");
                 //setcookie("password", $_POST["password"], time()+ 3600, "/");
                 session_start();
+                if($_POST["username"] == "admin"){
+                    $_SESSION['admin'] = 1;
+                    header('Location: ../admin.php');
+                    exit();
+                }
                 $_SESSION['username'] = $_POST["username"];
                 $_SESSION['password'] = $_POST['password'];
                 $_SESSION['age'] = $tab[2];
@@ -40,6 +46,7 @@ else{
                 $_SESSION['target_gender'] = $tab[10];
                 $_SESSION['height'] = $tab[11];
                 $_SESSION['eyes'] = $tab[12];
+                $_SESSION["admin"] = 0;
                 header('Location: ../Bienvenue.php');
                 exit();
             }
@@ -49,7 +56,7 @@ else{
             }
         }
     }
-    header('Location: ../Login.php?d=1');
+    header('Location: ../Login.php?d=2');
 }
 
 ?>

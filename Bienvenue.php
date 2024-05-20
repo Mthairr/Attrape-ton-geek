@@ -27,6 +27,11 @@
     <form method="post" action="php/page3.php">
         <button type="submit" name="log_out">Log out</button>
     </form>
+    <?php
+        if($_SESSION["admin"] == 1){
+            echo '<button class="admin" type="submit" onclick="document.location.href=' . "'admin.php';" . '">Return admin mode</button>';
+        }
+    ?>
     <ul class="menu">
         <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
         <li><a href="message.php">Message</a></li>

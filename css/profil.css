@@ -2,7 +2,7 @@
     color: #03C988;
 }
 body{
-    color: color: #03C988;
+    color: #03C988;
 }
 h1{
     justify-content: right;
@@ -65,6 +65,14 @@ fieldset{
 }
 .navbar form button {
     background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.admin {
+    background-color: #f08811;
     color: white;
     border: none;
     padding: 10px 20px;

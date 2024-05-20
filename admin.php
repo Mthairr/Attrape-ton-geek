@@ -30,8 +30,8 @@
     <div class="wrapper">
         <?php
             if(count($_COOKIE) > 0){
-                if(empty($_SESSION["name"])){
-                    header('Location: php/page3.php');
+                if($_SESSION["admin"] != 1){
+                    header('Location: Bienvenue.php');
                 }
             }
             else{
@@ -40,34 +40,14 @@
 
             $fileLines = count(file("donnee/log.txt"));
             $file = fopen("donnee/log.txt", "c+");
-            if(!isset($_GET['username'])){
-                echo "List of persons : <br><br>";
-                for($i=1; $i<=$fileLines; $i++){
-                    $tab = explode(";" ,fgets($file));
-                     if($tab[0] != $_SESSION["username"] && $tab[0] != "admin"){
-                        echo "<a style='color:yellow;' href='message.php?username=" . $tab[0] ."'>". $tab[0] ."</a><br><br>";
-                     }
-                }
-                exit();
-            }
-
-            if($_GET['username'] == $_SESSION['username']){
-                echo "<p id='error'>You can't send message to yourself</p>";
-                exit();
-            }
-
-            $rep=0;
+            echo "List of persons : <br><br>";
             for($i=1; $i<=$fileLines; $i++){
                 $tab = explode(";" ,fgets($file));
-                if($tab[0] == $_GET["username"]){
-                    $rep=1;
-                    break;
-                }
+                 if($tab[0] != "admin"){
+                    echo "<a style='color:yellow;' href='php/connexion.php?username=" . $tab[0] ."'>". $tab[0] ."</a><br><br>";
+                 }
             }
-            if($rep == 0){
-                echo "<p id='error'>User doesn't exist</p>";
-                exit();
-            }
+            exit();
         ?>
         <form method="post" action="">
             <textarea name="message"></textarea>
