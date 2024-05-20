@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +8,7 @@
         <meta name="description" content="">
         <link rel="icon" href="favicon2.ico" sizes="any">
     </head>
-    
+
     <body>
         <nav class="navbar">
             <img src="img/_6b17619c-9f60-47a6-a1dc-98336a5b2e7a-removebg-preview.png" alt="Logo" class="logo" onclick="index()">
@@ -40,9 +39,18 @@
                     <input type="text" placeholder="Country" class="text1" name="country">
                 </div>
                 <div class="input-box">
+                    <input type="text" placeholder="Adress" class="text1" name="adress">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Favourite video game character" class="text1" name="character">
+                </div>
+                <div class="input-box">
+                    <p>Your profil picture :</p>
+                    <input type="file" name="img" accept="image/png, image/jpeg">
+                </div>
+                <div class="input-box">
                     <p>I'm interested in :</p>
                     <select class="gender" name="target_gender">
-                        <option value="null"></option>
                         <option value="Man">Man</option>
                         <option value="Woman">Woman</option>
                         <option value="Other">Other</option>
@@ -52,6 +60,7 @@
                 <p>your height :</p>
                     <select class="height" name="height" >
                     <?php
+                    session_start();
                     for ($i = 0; $i <= 230; $i++) {
                         echo "<option value=\"$i\">$i cm</option>";
                     }
@@ -61,7 +70,6 @@
                 <div class="input-box">
                     <p>Your eyes color:</p>
                     <select class="eyes" name="eyes">
-                        <option value="null"></option>
                         <option value="Blue">Blue</option>
                         <option value="Brown">Brown</option>
                         <option value="Green">Green</option>
@@ -70,32 +78,23 @@
                         <option value="Hazel">Hazel</option>
                     </select>
                 </div>
-                <div class="input-box  character">
-                    <input type="text" placeholder="Favourite video game character" class="text1" name="character">
-                </div>
-                <div class="input-box img">
-                    <input type="file" name="img" accept="image/png, image/jpeg">
-                </div>
-
-
                 <button type="submit" class="btn">Sign up</button>
-
                 <?php
                     if(isset($_GET['d'])){
                         echo "<p id='error'>please enter a valid informations</p>";
                     }
 
-                    session_start();
-                    if(isset($_SESSION["name"])){
+                    if(count($_COOKIE) == 0){
+                        header('Location: signup.php');
+                        exit();
+                    }
+
+                    if(!empty($_SESSION["name"])){
                         header('Location: Bienvenue.php');
                     }
                 ?>
-
             </form>
         </div>
-
-
-
         <script src="js/app.js"></script>
         <script src="js/signup.js"></script>
     </body>

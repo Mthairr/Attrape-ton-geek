@@ -31,7 +31,6 @@
                     <div class="select-one">
                         <p>I am a :</p>
                         <select name="sexualindentity">
-                            <option value="null"></option>
                             <option value="Man">Man</option>
                             <option value="Woman">Woman</option>
                             <option value="Other">Other</option>
@@ -53,13 +52,18 @@
                 <button type="submit" class="btn">Sign up</button>
 
                 <?php
-                    
                     if(isset($_GET['d'])){
                         echo "<p id='error'>please enter a valid informations</p>";
                     }
 
                     if(count($_COOKIE) > 0){
-                        header('Location: Bienvenue.php');
+                        session_start();
+                        if(!empty($_SESSION["name"])){
+                            header('Location: Bienvenue.php');
+                        }
+                        else{
+                            header('Location: php/page3.php');
+                        }
                     }
                 ?>
 

@@ -14,7 +14,13 @@
 <body>
     <?php
         if(count($_COOKIE) > 0){
-            header('Location: Bienvenue.php');
+            session_start();
+            if(!empty($_SESSION["name"])){
+                header('Location: Bienvenue.php');
+            }
+            else{
+                header('Location: php/page3.php');
+            }
         }
     ?>
 

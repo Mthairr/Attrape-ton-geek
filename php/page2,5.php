@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             header('Location: ../signup2.php?d=10');
             throw new Exception("La couleur des yeux est incorrect");
         }
-        if(!isset($_FILES["img"]) || empty($_FILES["img"]) || $_FILES["size"] > 5242880){
+        if(!isset($_FILES["img"]) || empty($_FILES["img"]) || $_FILES["img"]["size"] > 5242880){
             header('Location: ../signup2.php?d=11');
             throw new Exception("Le format de l'image est incorrect");
         }
@@ -60,12 +60,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $file = fopen("../donnee/log.txt", "c+");
     for($i=1; $i<=$fileLines; $i++){
         $tab = explode(";" ,fgets($file));
-        if($tab[0] == $_POST["email"]){
+        if($tab[4] == $_POST["email"]){
             header('Location: ../signup2.php?d=12');
             exit();
         }
     }
-    //session_start();
+    session_start();
     move_uploaded_file($_FILES["img"]["tmp_name"], "../img/" . $_SESSION["username"] . "." . pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION));
     file_put_contents('../donnee/log.txt', "\n" . $_SESSION["username"] . ';' . hash('sha512',$_SESSION["password"]) . ';' . $_SESSION["age"] . ';' . $_SESSION["sexualindentity"] . ";" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";". $_POST["height"] . ";" . $_POST["eyes"] . ";" . $_POST["target_gender"] . ";" , FILE_APPEND);
     $_SESSION['email'] = $_POST["email"];

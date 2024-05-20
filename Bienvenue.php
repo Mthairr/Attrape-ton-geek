@@ -11,9 +11,15 @@
 <body>
 
 <?php
-if(count($_COOKIE) == 0){
-    header('Location: index.php');
-}
+    if(count($_COOKIE) > 0){
+        session_start();
+        if(empty($_SESSION["name"])){
+            header('Location: php/page3.php');
+        }
+    }
+    else{
+        header('Location: index.php');
+    }
 ?>
 
 <nav class="navbar">
