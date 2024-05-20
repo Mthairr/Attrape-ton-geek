@@ -13,7 +13,7 @@
     <nav class="navbar">
         <img src="img/_6b17619c-9f60-47a6-a1dc-98336a5b2e7a-removebg-preview.png" alt="Logo" class="logo" onclick="index()">
         <form method="post" action="php/page3.php">
-            <button type="submit" name="log_out">Log out</button>
+            <button class="logout" type="submit" name="log_out">Log out</button>
         </form>
         <ul class="menu">
             <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
@@ -93,6 +93,25 @@
         }
 
         load_messages();
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.report-btn', function() {
+                var messageId = $(this).data('message-id');
+
+                $.ajax({
+                    url: 'php/report_message.php',
+                    type: 'POST',
+                    data: { message_id: messageId },
+                    success: function(response) {
+                        alert('Message signalé avec succès.');
+                    },
+                    error: function() {
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

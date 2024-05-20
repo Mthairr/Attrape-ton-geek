@@ -31,7 +31,11 @@ if(count($_COOKIE) == 0){
 <h1>Votre profil</h1>
 <button type="submit" onclick="updateprofile()">Modifier votre profil ?</button>
 </div>
+<div>
+    <a href="view_reports.php">Voir les signalements</a>
+    <a href="delete_reports.php">Supprimer les signalements</a>
 
+</div>
 <script src="js/app.js"></script>
 </body>
 </html>
