@@ -4,6 +4,37 @@
     font-family: 'Oxygen', sans-serif;
     box-sizing: border-box;
 }
+@media screen and (min-width: 768px) {
+    .wrapper {
+        width: 50%;
+    }
+    .input-box {
+        width: 100%;
+        margin: 15px 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 80%;
+    }
+    .input-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .wrapper {
+        width: 90%;
+    }
+    .input-box {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
 
 body{
     background-image: url("../img/img2.jpg");
@@ -37,6 +68,8 @@ body{
 
 
 .wrapper{
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
     width: 420px;
     color: #03C988;
     display: block;
@@ -87,6 +120,8 @@ body{
 .input-box.select-one{
     width: calc(50% - 5px);
 }
+
+
 .text1:focus{
     color: #1fd0e7;
     font-weight: bold;

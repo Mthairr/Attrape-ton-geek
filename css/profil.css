@@ -1,7 +1,9 @@
 *{
     color: #03C988;
 }
-
+body{
+    color: color: #03C988;
+}
 h1{
     justify-content: right;
     align-items: center;

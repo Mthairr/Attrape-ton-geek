@@ -58,6 +58,7 @@ body{
     height: 50px;
     margin: 30px 0;
 }
+
 .input-box input{
     width: 100%;
     height: 100%;
@@ -150,4 +151,24 @@ body{
 .menu a.active1{
     background-color: #03C988;
     color: white;
+}
+.navbar .logout {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.report-btn {
+    background-color: rgba(205, 3, 3, 0.65);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.report-btn:hover{
+    background-color: rgba(205, 3, 3, 0.85);
 }
