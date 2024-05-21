@@ -16,9 +16,9 @@
                 $_SESSION['adress'] = $tab[7];
                 $_SESSION['town'] = $tab[8];
                 $_SESSION['country'] = $tab[9];
-                $_SESSION['target_gender'] = $tab[10];
-                $_SESSION['height'] = $tab[11];
-                $_SESSION['eyes'] = $tab[12];
+                $_SESSION['height'] = $tab[10];
+                $_SESSION['eyes'] = $tab[11];
+                $_SESSION['target_gender'] = $tab[12];
                 header('Location: ../Bienvenue.php');
                 exit();
             }

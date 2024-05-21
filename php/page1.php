@@ -35,7 +35,7 @@ else{
                     exit();
                 }
                 $_SESSION['username'] = $_POST["username"];
-                $_SESSION['password'] = $_POST['password'];
+                $_SESSION['password'] = $tab[1];
                 $_SESSION['age'] = $tab[2];
                 $_SESSION['sexualindentity'] = $tab[3];
                 $_SESSION['email'] = $tab[4];
@@ -44,9 +44,9 @@ else{
                 $_SESSION['adress'] = $tab[7];
                 $_SESSION['town'] = $tab[8];
                 $_SESSION['country'] = $tab[9];
-                $_SESSION['target_gender'] = $tab[10];
-                $_SESSION['height'] = $tab[11];
-                $_SESSION['eyes'] = $tab[12];
+                $_SESSION['height'] = $tab[10];
+                $_SESSION['eyes'] = $tab[11];
+                $_SESSION['target_gender'] = $tab[12];
                 $_SESSION["admin"] = 0;
                 header('Location: ../Bienvenue.php');
                 exit();

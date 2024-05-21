@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     session_start();
     $_SESSION["username"] = $_POST["username"];
     $_SESSION['age'] = $_POST["age"];
-    $_SESSION['password'] = $_POST['password'];
+    $_SESSION['password'] = hash('sha512',$_POST["password"]);
     $_SESSION["sexualindentity"] = $_POST["sexualindentity"];
     header('Location: ../signup2.php');
 }

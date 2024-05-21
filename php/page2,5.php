@@ -67,16 +67,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     session_start();
     move_uploaded_file($_FILES["img"]["tmp_name"], "../img/" . $_SESSION["username"] . "." . pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION));
-    file_put_contents('../donnee/log.txt', $_SESSION["username"] . ';' . hash('sha512',$_SESSION["password"]) . ';' . $_SESSION["age"] . ';' . $_SESSION["sexualindentity"] . ";" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";". $_POST["height"] . ";" . $_POST["eyes"] . ";" . $_POST["target_gender"] . ";" . "\n", FILE_APPEND);
+    file_put_contents('../donnee/log.txt', $_SESSION["username"] . ';' . $_SESSION["password"] . ';' . $_SESSION["age"] . ';' . $_SESSION["sexualindentity"] . ";" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";". $_POST["height"] . ";" . $_POST["eyes"] . ";" . $_POST["target_gender"] . ";" . "\n", FILE_APPEND);
     $_SESSION['email'] = $_POST["email"];
     $_SESSION['name'] = $_POST['name'];
     $_SESSION['lastname'] = $_POST['lastname'];
     $_SESSION['adress'] = $_POST['adress'];
     $_SESSION['town'] = $_POST['town'];
     $_SESSION['country'] = $_POST['country'];
-    $_SESSION['target_gender'] = $_POST['target_gender'];
     $_SESSION['height'] = $_POST['height'];
     $_SESSION['eyes'] = $_POST['eyes'];
+    $_SESSION['target_gender'] = $_POST['target_gender'];
     $_SESSION["admin"] = 0;
     header('Location: ../Bienvenue.php');
     exit();
