@@ -128,3 +128,12 @@ a{
 .search button:hover {
     background-color: #029a75;
 }
+
+.admin {
+    background-color: #f08811;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}

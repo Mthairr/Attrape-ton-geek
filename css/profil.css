@@ -1,19 +1,23 @@
-*{
+* {
     color: #03C988;
 }
-body{
+
+body {
     color: #03C988;
 }
-h1{
+
+h1 {
     justify-content: right;
     align-items: center;
 }
-button{
+
+button {
     border: 3px;
     height: auto;
     width: auto;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     background: linear-gradient(to right, rgba(19, 0, 90, 0.3), rgba(0, 51, 124, 0.3));
     top: 0;
@@ -27,42 +31,52 @@ button{
     box-sizing: border-box;
     border-bottom: 1px solid rgba(3, 201, 136, 0.3);
 }
-.navbar a{
+
+.navbar a {
     color: white;
     text-decoration: none;
     padding: 15px;
     display: block;
 }
-.navbar ul{
+
+.navbar ul {
     list-style-type: none;
     background-color: rgba(3, 201, 136, 0.3);
     padding: 0px;
     margin: 0px;
     overflow: hidden;
 }
-.navbar li{
+
+.navbar li {
     float: left;
 }
-.navbar a:hover{
+
+.navbar a:hover {
     background-color: rgba(53, 125, 224, 0.3);
 }
-.menu a.active{
+
+.menu a.active {
     background-color: #03C988;
     color: white;
 }
-.logo{
+
+.logo {
     height: 75px;
 }
-a{
+
+a {
     text-decoration: none;
-    color: white;
+    color: #03C988;
 }
-.content{
+
+.content {
     margin-top: 150px;
 }
-fieldset{
+
+fieldset {
     width: auto;
 }
+
 .navbar form button {
     background-color: #ff4b5c;
     color: white;
@@ -71,6 +85,7 @@ fieldset{
     cursor: pointer;
     border-radius: 5px;
 }
+
 .admin {
     background-color: #f08811;
     color: white;
@@ -80,3 +95,20 @@ fieldset{
     border-radius: 5px;
 }
 
+
+
+.wrapper {
+    max-width: 500px;
+    margin: auto;
+}
+
+.input-box {
+    margin: 10px 0;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
