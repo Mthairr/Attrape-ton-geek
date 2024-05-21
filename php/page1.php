@@ -30,6 +30,7 @@ else{
                 session_start();
                 if($_POST["username"] == "admin"){
                     $_SESSION['admin'] = 1;
+                    $_SESSION['name'] = "admin" ;
                     header('Location: ../admin.php');
                     exit();
                 }

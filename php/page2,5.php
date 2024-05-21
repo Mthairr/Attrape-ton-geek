@@ -79,6 +79,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $_SESSION['eyes'] = $_POST['eyes'];
     $_SESSION["admin"] = 0;
     header('Location: ../Bienvenue.php');
+    exit();
 }
-
-?>
