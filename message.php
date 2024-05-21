@@ -107,8 +107,7 @@
         }
 
         load_messages();
-    </script>
-    <script>
+
         $(document).ready(function() {
             $(document).on('click', '.report-btn', function() {
                 var messageId = $(this).data('message-id');
@@ -126,6 +125,41 @@
                 });
             });
         });
+
+        // Fonction pour ajouter le bouton
+        function addButton(paragraph) {
+            // Créez le bouton
+            const button = document.createElement('button');
+            button.textContent = 'Signaler';
+            button.className = 'report-btn';
+            button.setAttribute('data-message-id', paragraph.id);
+            button.setAttribute('onmouseleave', 'handleMouseLeave(this)');
+            button.setAttribute('onmouseover', 'handleMouseOver(this)');
+
+            // Ajoutez le bouton à l'intérieur du paragraphe
+            paragraph.appendChild(button);
+        }
+
+        // Fonction appelée lors du survol du paragraphe
+        function handleMouseOver(paragraph) {
+            if (paragraph.tagName === 'BUTTON') {
+                paragraph = paragraph.parentElement;
+            }
+            if (!paragraph.querySelector('.report-btn')) {
+                addButton(paragraph);
+            }
+        }
+
+        // Fonction appelée lorsque la souris quitte le paragraphe ou le bouton
+        function handleMouseLeave(element) {
+            setTimeout(() => {
+                const paragraph = element.tagName === 'BUTTON' ? element.parentElement : element;
+                const button = paragraph.querySelector('.report-btn');
+                if (!paragraph.matches(':hover') && (!button || !button.matches(':hover'))) {
+                    if (button) button.remove();
+                }
+            }, 200); // Utilisez un léger délai pour permettre la vérification
+        }
     </script>
 </body>
 </html>
