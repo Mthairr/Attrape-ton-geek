@@ -30,9 +30,6 @@
                     <input type="email" placeholder="Confirm your email" class="text1" name="email2">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Adress" class="text1" name="adress">
-                </div>
-                <div class="input-box">
                     <input type="text" placeholder="Town" class="text1" name="town">
                 </div>
                 <div class="input-box">

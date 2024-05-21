@@ -7,7 +7,24 @@
     <meta name="description" content="">
     <link rel="icon" href="favicon2.ico" sizes="any">
     <link rel="stylesheet" href="css/search.css">
-
+    <script>
+        function rechercher() {
+            var termeRecherche = document.getElementById('search').value;
+            if (termeRecherche.length > 0) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'recherche.php', true); // envoyer la requête à recherche.php
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        document.getElementById('resultats').innerHTML = xhr.responseText;
+                    }
+                };
+                xhr.send('search=' + encodeURIComponent(termeRecherche));
+            } else {
+                document.getElementById('resultats').innerHTML = ''; // Efface les résultats si la recherche est vide
+            }
+        }
+    </script>
 
 </head>
 <body>
@@ -53,52 +70,8 @@
     <?php
     } // Fin de la condition pour afficher le formulaire
     ?>
-
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
-        // Récupérer le terme de recherche
-        $termeRecherche = $_POST['search'];
-
-        // Chemin vers le fichier texte
-        $fichier = 'donnee/log.txt';
-
-        // Vérifier si le fichier existe et si le terme de recherche n'est pas vide
-        if (file_exists($fichier) && !empty($termeRecherche)) {
-            // Lire le fichier ligne par ligne
-            $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-            // Initialiser un booléen pour vérifier si au moins un résultat a été trouvé
-            $resultatTrouve = false;
-
-            // Parcourir chaque ligne
-            foreach ($lignes as $ligne) {
-                // Ignorer l'en-tête (première ligne)
-                if (strpos($ligne, 'pseudo|id|email') === false) {
-                    // Séparer les champs par le délimiteur ';'
-                    $champs = explode(';', $ligne);
-
-                    // Récupérer le pseudo (premier champ)
-                    $pseudo = $champs[0];
-
-                    // Afficher le pseudo s'il correspond au terme de recherche
-                    if (stripos($pseudo, $termeRecherche) === 0) {
-                        echo htmlspecialchars($pseudo) . '<br>';
-                        $resultatTrouve = true;
-                    }
-                }
-            }
-
-            // Si aucun résultat n'a été trouvé, afficher "Aucun résultat trouvé"
-            if (!$resultatTrouve) {
-                echo "Aucun résultat trouvé.";
-            }
-        } else {
-            echo "Aucun résultat trouvé.";
-        }
-    }
-    ?>
     
 </div>
-<script src="js/app.js"></script>
+
 </body>
 </html>

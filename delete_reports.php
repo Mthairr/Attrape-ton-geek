@@ -18,7 +18,7 @@ if(count($_COOKIE) == 0){
 }
 
 
-$reportsFilePath = '../donnee/reports.txt';
+$reportsFilePath = 'donnee/reports.txt';
 
 if (!file_exists($reportsFilePath)) {
     echo "Le fichier des signalements n'existe pas.";

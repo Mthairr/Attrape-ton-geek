@@ -11,19 +11,19 @@
 <body>
 <h1>View_reports</h1>
 <?php
-session_start();
+    session_start();
 
-if(count($_COOKIE) == 0){
-    header('Location: index.php');
-}
+    if(count($_COOKIE) == 0){
+        header('Location: index.php');
+    }
 
 
-$reports = file_get_contents('../donnee/reports.txt');
+    $reports = file_get_contents('donnee/reports.txt');
 
-$reports = n12br($reports);
+    $reports = nl2br($reports);
 
-echo "<h2>Signalements</h2>";
-echo "<pre>$reports</pre>";
+    echo "<h2>Signalements</h2>";
+    echo "<pre>$reports</pre>";
 
 ?>
 
