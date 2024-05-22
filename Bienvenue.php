@@ -18,8 +18,7 @@
         if (empty($_SESSION["name"])) {
             header('Location: php/page3.php');
         }
-    }
-    else {
+    } else {
         header('Location: index.php');
     }
     ?>
@@ -52,13 +51,32 @@
     </div>
     <?php
     if (isset($_SESSION['username'])) {
+
+
+        // Chemin vers le fichier des visites
+        $fichier_visites = 'donnee/visites.txt';
+        $username_connecte = $_SESSION['username'];
+        // Vérifier si le fichier des visites existe
+        $lignes2 = file($fichier_visites, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $nombre_visites=0;
+        // Parcourir chaque ligne
+        foreach ($lignes2 as $ligne2) {
+            // Séparer les champs par le délimiteur ';'
+            $champs2 = explode(';', $ligne2);
+            if ($champs2[0] === $username_connecte) {
+                $nombre_visites = count($champs2) - 1;
+
+            }
+        }
+
+
         // Nom d'utilisateur de l'utilisateur connecté
         $username_connecte = $_SESSION['username'];
-        
+
         // Chemin vers le dossier des images
         $dossierImages = 'img/';
 
-        // Chemin vers le fichier texte
+        // Chemin vers le fichier texteA
         $fichier = 'donnee/log.txt';
 
         // Vérifier si le fichier existe
@@ -99,7 +117,7 @@
                     echo '<p><strong>Taille (cm):</strong> ' . htmlspecialchars($champs[10]) . '</p>';
                     echo '<p><strong>Couleur des yeux:</strong> ' . htmlspecialchars($champs[11]) . '</p>';
                     echo '<p><strong>Genre intéressé:</strong> ' . htmlspecialchars($champs[12]) . '</p>';
-                    break; // Sortir de la boucle une fois que l'utilisateur est trouvé
+                    echo '<p><strong>Nombre de visites :</strong>   ' . $nombre_visites . '</p>';
                 }
             }
         } else {

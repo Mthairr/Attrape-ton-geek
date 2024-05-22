@@ -3,7 +3,7 @@ session_start();
 
 // Vérifiez si l'utilisateur est connecté
 if (!isset($_SESSION['username'])) {
-    header("Location: connexion.php");
+    header("Location: login.php");
     exit;
 }
 
@@ -14,10 +14,19 @@ if (!isset($_GET['username'])) {
 }
 
 $username = $_GET['username'];
+$visiteur = $_SESSION['username'];
 $fichier = 'donnee/log.txt';
+$visitesFichier = 'donnee/visites.txt';
 $utilisateur_info = [];
 
-// Lire le fichier et trouver les informations de l'utilisateur
+// Vérifie si l'utilisateur visite son propre profil
+if ($_SESSION['username'] === $username) {
+    echo '<p>TFKCHACAL</p>'; // Uniquement pour le débogage, peut être supprimé
+    header("Location: bienvenue.php");
+    exit;
+}
+
+// Lire le fichier pour trouver les informations de l'utilisateur visité
 if (file_exists($fichier)) {
     $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
@@ -34,10 +43,45 @@ if (empty($utilisateur_info)) {
     echo "Utilisateur non trouvé.";
     exit;
 }
+
+// Écriture dans le fichier des visites
+if (file_exists('donnee')) {
+    if (file_exists($visitesFichier)) {
+        $visites = file($visitesFichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        $nouveau_contenu = '';
+        $utilisateur_trouve = false;
+
+        foreach ($visites as $key => $ligne) {
+            $champs = explode(';', $ligne);
+            if ($champs[0] === $username) {
+                $utilisateur_trouve = true;
+                if (!in_array($visiteur, $champs)) {
+                    $visites[$key] .= ';' . $visiteur;
+                }
+            }
+            $nouveau_contenu .= $visites[$key] . "\n";
+        }
+
+        if (!$utilisateur_trouve) {
+            $nouveau_contenu .= $username . ';' . $visiteur . "\n";
+        }
+
+        file_put_contents($visitesFichier, $nouveau_contenu);
+    } else {
+        file_put_contents($visitesFichier, $username . ';' . $visiteur . "\n");
+    }
+} else {
+    echo "Le répertoire 'donnee' n'existe pas.";
+    exit;
+}
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Profil de <?php echo htmlspecialchars($username); ?></title>
@@ -48,20 +92,21 @@ if (empty($utilisateur_info)) {
             max-width: 500px;
             margin: auto;
         }
+
         .profile-picture {
             max-width: 200px;
             max-height: 200px;
         }
     </style>
 </head>
+
 <body>
-<?php
+    <?php
     if (count($_COOKIE) > 0) {
         if (empty($_SESSION["name"])) {
             header('Location: php/page3.php');
         }
-    }
-    else {
+    } else {
         header('Location: index.php');
     }
     ?>
@@ -112,4 +157,5 @@ if (empty($utilisateur_info)) {
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
     </div>
 </body>
+
 </html>
