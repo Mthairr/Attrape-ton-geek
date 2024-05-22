@@ -1,4 +1,5 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
     // Récupérer le terme de recherche
     $termeRecherche = $_POST['search'];
@@ -37,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
                 }
 
                 // Afficher l'image de profil et le pseudo s'ils correspondent au terme de recherche
-                if (stripos($pseudo, $termeRecherche) === 0 && file_exists($cheminImage)) {
+                if (stripos($pseudo, $termeRecherche) === 0 && file_exists($cheminImage) && $pseudo!=$_SESSION['username']) {
                     echo '<div style="display:flex; align-items:center;">';
                     echo '<img src="' . htmlspecialchars($cheminImage) . '" style="max-width: 50px; max-height: 50px; margin-right: 10px;">';
-                    echo htmlspecialchars($pseudo) . '<br>';
+                    echo '<a href="profil.php?username=' . urlencode($pseudo) . '">' . htmlspecialchars($pseudo) . '</a><br>';
                     echo '</div>';
                     $resultatTrouve = true;
                 }
