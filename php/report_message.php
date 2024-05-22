@@ -7,23 +7,30 @@ if (count($_COOKIE) == 0) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['message_id'])) {
+    if(isset($_POST['message_id'])) {
         $messageId = intval($_POST['message_id']);
         $fileLines = file("../donnee/message.txt");
-        if ($messageId > 0 && $messageId <= count($fileLines)) {
-            $message = $fileLines[$messageId - 1];
-            file_put_contents('../donnee/reports.txt', $message . "\n", FILE_APPEND);
-            echo "Message signalé avec succès.";
-            exit();
-        } else {
-            http_response_code(400);
+        $line = count($fileLines);
+        if ($messageId > 0 && $messageId <= explode(";", $fileLines)[$line-1][0]) {
+            for($i=0; $i<$line; $i++){
+                if(explode(";", $fileLines)[$line-1][0] == $messageId){
+                    file_put_contents('../donnee/reports.txt', $message . "\n", FILE_APPEND);
+                    echo "Message signalé avec succès.";
+                    exit();
+                }
+            }
+        } 
+        else{
             echo "ID de message invalide.";
+            http_response_code(400);
         }
-    } else {
+    } 
+    else{
         http_response_code(400);
         echo "Paramètre message_id manquant.";
     }
-} else {
+} 
+else{
     http_response_code(405);
     echo "Méthode non autorisée.";
 }
