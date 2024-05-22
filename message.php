@@ -94,12 +94,13 @@
                     file_put_contents('donnee/message.txt', $tab[0]+1 . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";" . "\n", FILE_APPEND);
                 }
             }
+            echo empty($_SESSION["oui"]);
             ?>
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        //setInterval('load_messages()', 500);
+        setInterval('load_messages()', 500);
         function load_messages(){
             var urlcourante = document.location.href;
             var urlcourante = urlcourante.replace(/\/$/, "");
@@ -132,7 +133,7 @@
             const button = document.createElement('button');
             button.textContent = 'Signaler';
             button.className = 'report-btn';
-            button.setAttribute('data-message-id', paragraph.id);
+            button.setAttribute('id', paragraph.id);
             button.setAttribute('type', "button");
             
             button.setAttribute('onmouseleave', 'handleMouseLeave(this)');
