@@ -13,6 +13,9 @@ function updateprofile(){
 function results_search(){
     document.location.href="results_search.php"
 }
+function bienvenue()  {
+    document.location.href="Bienvenue.php"
+}
 
 function rechercher() {
     var termeRecherche = document.getElementById('search').value;

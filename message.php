@@ -25,6 +25,7 @@
             <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
             <li><a class="active1" href="message.php">Message</a></li>
             <li><a class="active2" href="search.php">Recherche</a></li>
+            <li><a class="active3" href="subscription.php">Abonnements</a></li>
         </ul>
     </nav>
     <div class="wrapper">
@@ -41,13 +42,15 @@
             $fileLines = count(file("donnee/log.txt"));
             $file = fopen("donnee/log.txt", "c+");
             if(!isset($_GET['username'])){
-                echo "List of persons : <br><br>";
+                echo "Listes des personnes inscrites : <br><br>";
+                echo '<dix class="scroll-container">';
                 for($i=1; $i<=$fileLines; $i++){
                     $tab = explode(";" ,fgets($file));
                      if($tab[0] != $_SESSION["username"] && $tab[0] != "admin"){
                         echo "<a style='color:yellow;' href='message.php?username=" . $tab[0] ."'>". $tab[0] ."</a><br><br>";
                      }
                 }
+                echo '</div>';
                 exit();
             }
 

@@ -44,8 +44,10 @@ body{
     align-items: center;
     background: rgba(53, 55, 210, 0.4);
     padding: 30px 40px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    /*border: 2px solid rgba(255, 255, 255, 0.2);*/
     border-radius: 18px;
+    margin-top: 135px;
+    max-height: 70vh;
     /*backdrop-filter: blur(20px);*/
 }
 .wrapper h1{
@@ -159,6 +161,44 @@ body{
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+}
+.scroll-container {
+    max-height: 50vh; /* Ajustez cette valeur selon vos besoins */
+    overflow-y: auto;
+    width: 100%;
+    color: #03C988;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    /*background: rgba(53, 55, 210, 0.4);*/
+    padding: 10px 20px;
+    /*border: 2px solid rgba(255, 255, 255, 0.2);*/
+    border-radius: 10px;
+}
+
+.scroll-container a {
+    color: yellow;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Barre de défilement personnalisée */
+.scroll-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(3, 201, 136, 0.8);
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(3, 201, 136, 0.9);
 }
 .admin {
     background-color: #f08811;

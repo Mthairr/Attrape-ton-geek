@@ -55,6 +55,8 @@
         <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
         <li><a class="active1" href="message.php">Message</a></li>
         <li><a class="active2" href="search.php">Recherche</a></li>
+        <li><a class="active3" href="subscription.php">Abonnements</a></li>
+
     </ul>
 </nav>
 <div class="search" >
