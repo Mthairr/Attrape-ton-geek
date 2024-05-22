@@ -94,7 +94,6 @@
                     file_put_contents('donnee/message.txt', $tab[0]+1 . ';' . str_replace(array("\r", "\n", "\r\n"), ' ', nl2br($_POST["message"])) . ';' . $_SESSION["username"] . ';' . $_GET["username"] . ";" . "\n", FILE_APPEND);
                 }
             }
-            echo empty($_SESSION["oui"]);
             ?>
         </form>
     </div>
