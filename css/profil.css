@@ -66,13 +66,14 @@ button {
 
 a {
     text-decoration: none;
-    color: #ffffff;
+    color: #03C988;
 }
 
 .content {
     margin-top: 150px;
 }
-.content button{
+
+.content button {
     color: #ffffff;
     border-radius: 5px;
     background-color: #03C988;
@@ -80,7 +81,8 @@ a {
     font-weight: bold;
     font-size: 18px;
 }
-.content button:hover{
+
+.content button:hover {
     background-color: rgba(3, 201, 136, 0.7);
     cursor: pointer;
 }
@@ -117,14 +119,16 @@ fieldset {
 .input-box {
     margin: 10px 0;
 }
-.input-submit button{
+
+.input-submit button {
     color: #ffffff;
     background-color: #03C988;
     padding: 10px 190px;
     font-size: 16px;
     font-weight: bold;
 }
-.input-submit button:hover{
+
+.input-submit button:hover {
     background-color: rgba(3, 201, 136, 0.7);
     cursor: pointer;
 }
@@ -134,4 +138,11 @@ fieldset {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
+}
+
+.profile-container {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 80px;
+    /* Adjust this value if the navbar height changes */
 }
