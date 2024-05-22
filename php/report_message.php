@@ -1,20 +1,20 @@
 <?php
 session_start();
 
-if (count($_COOKIE) == 0) {
-    header('Location: ../index.php');
-    exit();
-}
+$_SESSION["oui"] = 1;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['message_id'])) {
         $messageId = intval($_POST['message_id']);
         $fileLines = file("../donnee/message.txt");
         $line = count($fileLines);
-        if ($messageId > 0 && $messageId <= explode(";", $fileLines)[$line-1][0]) {
+        $_SESSION["oui"] = 1;
+        if ($messageId > 0 && $messageId <= explode(";", $fileLines[$line-1])[0]) {
+            $_SESSION["oui"] = 1;
             for($i=0; $i<$line; $i++){
-                if(explode(";", $fileLines)[$line-1][0] == $messageId){
-                    file_put_contents('../donnee/reports.txt', $message . "\n", FILE_APPEND);
+                $message = explode(";", $fileLines[$i]);
+                if($message[0] == $messageId){
+                    file_put_contents('../donnee/reports.txt', implode(";", $message) . "\n", FILE_APPEND);
                     echo "Message signalé avec succès.";
                     exit();
                 }
