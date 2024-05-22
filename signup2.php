@@ -18,43 +18,43 @@
             <form method="post" action="php/page2,5.php" enctype="multipart/form-data">
                 <h1>~ Sign up ~</h1>
                 <div class="input-box">
-                    <input type="text", placeholder="Name" class="text1" name="name">
+                    <input type="text", placeholder="Prénom" class="text1" name="name">
                 </div>
                 <div class="input-box">
-                    <input type="text", placeholder="Last name" class="text1" name="lastname">
+                    <input type="text", placeholder="Nom" class="text1" name="lastname">
                 </div>
                 <div class="input-box">
                     <input type="email", placeholder="Email" class="text1" name="email">
                 </div>
                 <div class="input-box">
-                    <input type="email" placeholder="Confirm your email" class="text1" name="email2">
+                    <input type="email" placeholder="Confirme ton email" class="text1" name="email2">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Town" class="text1" name="town">
+                    <input type="text" placeholder="Ville" class="text1" name="town">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Country" class="text1" name="country">
+                    <input type="text" placeholder="Pays" class="text1" name="country">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Adress" class="text1" name="adress">
+                    <input type="text" placeholder="Adresse" class="text1" name="adress">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Favourite video game character" class="text1" name="character">
+                    <input type="text" placeholder="Ton personnage de jeux vidéo préféré" class="text1" name="character">
                 </div>
                 <div class="input-box">
-                    <p>Your profil picture :</p>
+                    <p>Ta photo de profil :</p>
                     <input type="file" name="img" accept="image/png, image/jpeg">
                 </div>
                 <div class="input-box">
-                    <p>I'm interested in :</p>
+                    <p>Je suis intérressé :</p>
                     <select class="gender" name="target_gender">
-                        <option value="Man">Man</option>
-                        <option value="Woman">Woman</option>
-                        <option value="Other">Other</option>
+                        <option value="Man">Homme</option>
+                        <option value="Woman">Femme</option>
+                        <option value="Other">Autre</option>
                     </select>
                 </div>
                 <div class="input-box">
-                <p>your height :</p>
+                <p>Ma taille :</p>
                     <select class="height" name="height" >
                     <?php
                     session_start();
@@ -65,7 +65,7 @@
                     </select>
                 </div>
                 <div class="input-box">
-                    <p>Your eyes color:</p>
+                    <p>Ta couleur des yeux :</p>
                     <select class="eyes" name="eyes">
                         <option value="Blue">Blue</option>
                         <option value="Brown">Brown</option>

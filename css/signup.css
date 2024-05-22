@@ -75,7 +75,7 @@ body{
     display: block;
     justify-content: center;
     align-items: center;
-    background: rgba(53, 55, 210, 0.4);
+    background: rgba(59, 61, 151, 0.9);
     padding: 30px 40px;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px;
@@ -106,13 +106,14 @@ body{
     cursor: pointer;
 }
 .input-box input::placeholder{
-    color: #03C988;
+    color: #00ffaa;
     font-weight: bold;
 }
 .input-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 10px;
 }
 .input-box.age{
     width: calc(50% - 5px);

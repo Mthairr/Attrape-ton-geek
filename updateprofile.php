@@ -20,6 +20,8 @@
         <ul class="menu">
             <li><a class="active" href="Bienvenue.php">Votre profil</a></li>
             <li><a href="message.php">Message</a></li>
+            <li><a href="search.php">Recherche</a></li>
+            <li><a href="subscription.php">Abonnements</a></li>
         </ul>
     </nav>
     <div class="content">
@@ -117,7 +119,7 @@
         }
 
         file_put_contents($fichier, implode("\n", $nouvelle_lignes));
-        header("Location: bienvenue.php");
+        header("Location: Bienvenue.php");
         exit;
     }
     ?>
@@ -221,8 +223,8 @@
                     </option>
                 </select>
             </div>
-            <div class="input-box">
-                <input type="submit" value="Mettre à jour le profil">
+            <div class="input-submit">
+                <button classe="submit" type="submit" value="Mettre à jour le profil">Mettre le profil à jour</button>
             </div>
         </form>
     </div>

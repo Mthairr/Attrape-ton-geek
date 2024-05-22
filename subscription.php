@@ -47,6 +47,7 @@ else {
                     <div class="deal-top">
                         <h3>Classique</h3>
                         <h4>3.99 <span class="sup">€</span></h4>
+                        <p>1 minutes d'essais gratuit</p>
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
@@ -66,7 +67,26 @@ else {
                     <div class="deal-top">
                         <h3>Premium</h3>
                         <h4>6.99<span class="sup">€</span></h4>
-                        <p></p>
+                        <p>1 minutes d'essais gratuit</p>                    </div>
+                    <div class="deal-bottom">
+                        <ul class="deal-items">
+                            <li>Messages illimités</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                        </ul>
+                        <div class="btn-area">
+                            <button onclick="bienvenue()">Je commence dès maintenant</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="single-price">
+                    <div class="deal-top">
+                        <h3>VIP</h3>
+                            <h4>20.99<span class="sup">€</span></h4>
+                            <p>1 minutes d'essais gratuit</p>
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">

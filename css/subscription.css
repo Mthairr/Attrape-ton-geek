@@ -65,19 +65,21 @@ a{
     border-radius: 5px;
 }
 h1{
-    padding-top: 100px;
+    padding-top: 135px;
     color: #03C988;
     text-align: center;
 margin: 0 auto;
 }
-
+.pricing-area{
+    border-radius: 1àpx;
+}
 .single-price{
     text-align: center;
     background: #262626;
     margin-top: 20px;
 }
 .single-price h3{
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 600;
     text-align: center;
     margin: 0;
@@ -88,6 +90,10 @@ margin: 0 auto;
     font-size: 25px;
     font-weight: 500;
     color: #fff;
+}
+.deal-top p{
+    padding-top: 2px;
+    color: #ffffff;
 }
 .single-price h4 span.sup{
     vertical-align: text-top;

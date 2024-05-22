@@ -19,21 +19,21 @@
             <form method="post" action="php/page2.php">
                 <h1>~ Sign up ~</h1>
                 <div class="input-box">
-                    <input type="text", placeholder="Username" class="text1" name="username">
+                    <input type="text", placeholder="Nom d'utilisateur" class="text1" name="username">
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" class="text1" name="password">
+                    <input type="password" placeholder="Mot de passe" class="text1" name="password">
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Confirm your password" class="text1" name="password2">
+                    <input type="password" placeholder="Confirme ton mot de passe" class="text1" name="password2">
                 </div>
                 <div class="input-container">
                     <div class="select-one">
-                        <p>I am a :</p>
+                        <p>Je suis :</p>
                         <select name="sexualindentity">
-                            <option value="Man">Man</option>
-                            <option value="Woman">Woman</option>
-                            <option value="Other">Other</option>
+                            <option value="Man">Homme</option>
+                            <option value="Woman">Femme</option>
+                            <option value="Other">Autre</option>
                         </select>
                     </div>
                     <div class="age">
@@ -43,11 +43,6 @@
                         </label>
                     </div>
                 </div>
-
-                <div class="remember-forgot">
-                    <label><input type="checkbox">Remember me</label>
-                </div>
-
 
                 <button type="submit" class="btn">Sign up</button>
 
