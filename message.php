@@ -99,7 +99,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        setInterval('load_messages()', 500);
+        //setInterval('load_messages()', 500);
         function load_messages(){
             var urlcourante = document.location.href;
             var urlcourante = urlcourante.replace(/\/$/, "");
@@ -111,10 +111,8 @@
 
         load_messages();
 
-        $(document).ready(function() {
-            $(document).on('click', '.report-btn', function() {
-                var messageId = $(this).data('message-id');
-
+        function signal(aa) {
+                var messageId = aa.id;
                 $.ajax({
                     url: 'php/report_message.php',
                     type: 'POST',
@@ -126,8 +124,7 @@
                         alert('Une erreur est survenue. Veuillez réessayer.');
                     }
                 });
-            });
-        });
+            }
 
         // Fonction pour ajouter le bouton
         function addButton(paragraph) {
@@ -136,6 +133,8 @@
             button.textContent = 'Signaler';
             button.className = 'report-btn';
             button.setAttribute('data-message-id', paragraph.id);
+            button.setAttribute('type', "button");
+            
             button.setAttribute('onmouseleave', 'handleMouseLeave(this)');
             button.setAttribute('onmouseover', 'handleMouseOver(this)');
 
