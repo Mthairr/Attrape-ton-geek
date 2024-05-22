@@ -33,11 +33,10 @@
         <?php
         if ($_SESSION["admin"] == 1) {
             echo '<button class="admin" type="submit" onclick="document.location.href=' . "'admin.php';" . '">Return admin mode</button>';
-            echo '<div>
-            <a href="view_reports.php">Voir les signalements</a>
-            <a href="delete_reports.php">Supprimer les signalements</a>
-    
-        </div>';
+            echo '<form method="post" action="php/ban.php" enctype="multipart/form-data"> 
+                        <button class="admin" type="submit" class="btn">Bannir utilisateur</button>
+                </form>';
+
         }
         ?>
         <ul class="menu">
