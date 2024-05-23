@@ -130,7 +130,19 @@ if (file_exists('donnee')) {
         </ul>
     </nav>
     <div class="profile-container">
-        <h1>Profil de <?php echo htmlspecialchars($username); ?></h1>
+        <div class="profile-header">
+            <h1>Profil de <?php echo htmlspecialchars($username); ?></h1>
+            <!--Ajout du boutton pour ajouter un ami-->
+            <?php if($_SESSION['username'] !== $username) : ?>
+                <form id="addFriendForm" method="post" action="php/add_friend.php">
+                    <input type="hidden" name="ami_username" value="<?php echo htmlspecialchars($username);?>">
+                    <button id="btnAddFriend" class="add_friend" onclick="return ajouterAmi('<?php echo htmlspecialchars($username);?>')">
+                        <img src="img/add-user-icon.svg" alt="Ajouter en ami" style="width: 18.5px; height: 18.5px; margin-right: 8px;">
+                        Ajouter en ami</button>
+                </form>
+            <?php endif; ?>
+        </div>
+
         <?php
         $image_extensions = ['png', 'jpg', 'jpeg'];
         $image_path = '';
@@ -156,6 +168,32 @@ if (file_exists('donnee')) {
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
     </div>
+
+<script>
+    function ajouterAmi(ami_username) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "php/add_friend.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        var bouton = document.getElementById("btnAddFriend");
+                        bouton.innerHTML = '<img src="success-icon.svg" alt="Ajouté en ami" style="width: 18.5px; height: 18.5px; margin-right: 8px;"> Ami ajouté';
+                        bouton.classList.add("added");
+                        bouton.disabled = true;
+                    } else {
+                        alert("Erreur lors de l'ajout d'ami.");
+                    }
+                } else {
+                    alert("Erreur lors de la requête.");
+                }
+            }
+        };
+        xhr.send("ami_username=" + encodeURIComponent(ami_username));
+    }
+</script>
 </body>
 
 </html>

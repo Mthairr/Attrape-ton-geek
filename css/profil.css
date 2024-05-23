@@ -146,3 +146,25 @@ fieldset {
     padding-top: 80px;
     /* Adjust this value if the navbar height changes */
 }
+.add_friend{
+    padding: 11.5px 16px;
+    color: #ffffff;
+    background-color: rgba(255, 94, 6, 0.80);
+    font-size: 15px;
+    font-weight: bold;
+}
+.add_friend:hover{
+    cursor: pointer;
+    background-color: rgba(255, 94, 6, 0.55);
+
+}
+.profile-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+.add_friend.added{
+    background-color: #4caf50;
+    color: white;
+}
