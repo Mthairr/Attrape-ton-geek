@@ -55,7 +55,10 @@ button {
     background-color: rgba(53, 125, 224, 0.3);
 }
 
-.menu a.active {
+.menu a.active,
+.menu a.active1,
+.menu a.active2,
+.menu a.active3 {
     background-color: #03C988;
     color: white;
 }
@@ -109,8 +112,6 @@ fieldset {
     border-radius: 5px;
 }
 
-
-
 .wrapper {
     max-width: 500px;
     margin: auto;
@@ -146,25 +147,60 @@ fieldset {
     padding-top: 80px;
     /* Adjust this value if the navbar height changes */
 }
-.add_friend{
+
+.add_friend {
     padding: 11.5px 16px;
     color: #ffffff;
     background-color: rgba(255, 94, 6, 0.80);
     font-size: 15px;
     font-weight: bold;
 }
-.add_friend:hover{
+
+.add_friend:hover {
     cursor: pointer;
     background-color: rgba(255, 94, 6, 0.55);
-
 }
-.profile-header{
-    display:flex;
+
+.profile-header {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 13px;
 }
-.add_friend.added{
+
+.add_friend.added {
     background-color: #4caf50;
     color: white;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    padding-top: 175px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    text-align: right;
+    font-size: 14px;
+    width: 100%;
+}
+
+.counters fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #19aae8;
+}
+
+.counters p {
+    margin: 0 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.counters p span {
+    display: block;
+    font-weight: bold;
+    font-size: 33px;
 }

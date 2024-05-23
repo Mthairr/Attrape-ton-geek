@@ -184,7 +184,12 @@ if (file_exists('donnee')) {
                         bouton.classList.add("added");
                         bouton.disabled = true;
                     } else {
-                        alert("Erreur lors de l'ajout d'ami.");
+                        if (response.message === "Ami déjà ajouté.") {
+                            alert("Cet ami a déjà été ajouté.");
+                            var bouton = document.getElementById("btnAddFriend");
+                            bouton.innerHTML = '<img src="success-icon.svg" alt="Ajouté en ami" style="width: 18.5px; height: 18.5px; margin-right: 8px;"> Ami ajouté';
+                            bouton.classList.add("added");
+                            bouton.disabled = true;
                     }
                 } else {
                     alert("Erreur lors de la requête.");
