@@ -155,6 +155,7 @@ if (file_exists('donnee')) {
         <p>Je suis intéressé par: <?php echo htmlspecialchars($utilisateur_info[12]); ?></p>
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
+        <button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>
     </div>
 
 <script>
