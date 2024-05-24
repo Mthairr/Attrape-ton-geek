@@ -31,9 +31,9 @@
                     <div class="select-one">
                         <p>Je suis :</p>
                         <select name="sexualindentity">
-                            <option value="Man">Homme</option>
-                            <option value="Woman">Femme</option>
-                            <option value="Other">Autre</option>
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>
                         </select>
                     </div>
                     <div class="age">
