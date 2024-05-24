@@ -73,7 +73,7 @@
             }
         ?>
         <form method="post" action="">
-            <textarea name="message"></textarea>
+            <input name="message"></textarea>
             <br><br>
             <button type="submit" class="btn">Send</button>
             <section id=message></section>
@@ -113,10 +113,11 @@
 
         function signal(aa) {
                 var messageId = aa.id;
+                let raison = prompt("Pourquoi le signalement ?");
                 $.ajax({
                     url: 'php/report_message.php',
                     type: 'POST',
-                    data: { message_id: messageId },
+                    data: { message_id: messageId,  raison: raison},
                     success: function(response) {
                         alert('Message signalé avec succès.');
                     },
