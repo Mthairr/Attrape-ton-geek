@@ -51,13 +51,15 @@ else {
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
-                            <li>+ 10 messages</li>
-                            <li>2</li>
+                            <li>Accès à la messagerie</li>
+                            <li>1 mois d'abonnement</li>
                             <li>3</li>
                             <li>4</li>
                         </ul>
                         <div class="btn-area">
-                            <button onclick="bienvenue()">Je commence dès maintenant</button>
+                            <form method="post" action="php/abon.php">
+                                <button type="submit" name="abonnement1">Je commence dès maintenant</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -76,7 +78,7 @@ else {
                             <li>8</li>
                         </ul>
                         <div class="btn-area">
-                            <button onclick="bienvenue()">Je commence dès maintenant</button>
+                            <button onclick="abonne()">Je commence dès maintenant</button>
                         </div>
                     </div>
                 </div>
@@ -96,7 +98,7 @@ else {
                             <li>8</li>
                         </ul>
                         <div class="btn-area">
-                            <button onclick="bienvenue()">Je commence dès maintenant</button>
+                            <button onclick="abonne()">Je commence dès maintenant</button>
                         </div>
                     </div>
                 </div>

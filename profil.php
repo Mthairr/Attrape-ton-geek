@@ -132,15 +132,6 @@ if (file_exists('donnee')) {
     <div class="profile-container">
         <div class="profile-header">
             <h1>Profil de <?php echo htmlspecialchars($username); ?></h1>
-            <!--Ajout du boutton pour ajouter un ami-->
-            <?php if($_SESSION['username'] !== $username) : ?>
-                <form id="addFriendForm" method="post" action="php/add_friend.php">
-                    <input type="hidden" name="ami_username" value="<?php echo htmlspecialchars($username);?>">
-                    <button id="btnAddFriend" class="add_friend" onclick="return ajouterAmi('<?php echo htmlspecialchars($username);?>')">
-                        <img src="img/add-user-icon.svg" alt="Ajouter en ami" style="width: 18.5px; height: 18.5px; margin-right: 8px;">
-                        Ajouter en ami</button>
-                </form>
-            <?php endif; ?>
         </div>
 
         <?php
@@ -158,12 +149,9 @@ if (file_exists('donnee')) {
             echo "<p>Aucune photo de profil.</p>";
         }
         ?>
-        <p>Prénom: <?php echo htmlspecialchars($utilisateur_info[5]); ?></p>
-        <p>Nom: <?php echo htmlspecialchars($utilisateur_info[6]); ?></p>
         <p>Email: <?php echo htmlspecialchars($utilisateur_info[4]); ?></p>
         <p>Ville: <?php echo htmlspecialchars($utilisateur_info[8]); ?></p>
         <p>Pays: <?php echo htmlspecialchars($utilisateur_info[9]); ?></p>
-        <p>Adresse: <?php echo htmlspecialchars($utilisateur_info[7]); ?></p>
         <p>Je suis intéressé par: <?php echo htmlspecialchars($utilisateur_info[12]); ?></p>
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
@@ -190,13 +178,14 @@ if (file_exists('donnee')) {
                             bouton.innerHTML = '<img src="success-icon.svg" alt="Ajouté en ami" style="width: 18.5px; height: 18.5px; margin-right: 8px;"> Ami ajouté';
                             bouton.classList.add("added");
                             bouton.disabled = true;
-                    }
-                } else {
+                        }
+                    } else {
                     alert("Erreur lors de la requête.");
+                    }
                 }
-            }
-        };
+            };
         xhr.send("ami_username=" + encodeURIComponent(ami_username));
+        }
     }
 </script>
 </body>
