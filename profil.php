@@ -189,6 +189,8 @@ if (file_exists('donnee')) {
         }
     }
 </script>
+<script src="js/app.js"></script>
+
 </body>
 
 </html>
