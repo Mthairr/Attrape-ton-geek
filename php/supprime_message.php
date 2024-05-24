@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             for($i=0; $i<$line; $i++){
                 $message = explode(";", $fileLines[$i]);
                 if($message[0] == $messageId){
-                    file_put_contents('../donnee/reports.txt', "");
+                    unset($fileLines[$i]);
+                    file_put_contents("../donnee/message.txt", implode("", $fileLines));
                     echo "Message signalé avec succès.";
                     exit();
                 }

@@ -15,10 +15,10 @@
         }
         if($_SESSION["admin"] == 1){
             if(($tab[2] == $_SESSION["username"] && $tab[3] == $_GET["username"])){
-                echo "<br><p id=" . $tab[0] . ">" . $_SESSION["username"] . " : " . $tab[1] . "<button class='report-btn' onclick='suppr(this);'>supprimer</button></p>";
+                echo "<br><p id=" . $tab[0] . ">" . $_SESSION["username"] . " : " . $tab[1] . "<button type='button' id=" . $tab[0] . " class='report-btn' onclick='suppr(this);'>supprimer</button></p>";
             }
             else if(($tab[2]==$_GET["username"] && $tab[3] == $_SESSION["username"])){
-                echo "<br><p id=" . $tab[0] . " class=mouse style='color:red;'>" . $_GET["username"] . " : " . $tab[1] . "<button class='report-btn' onclick='suppr(this);'>supprimer</button></p>";
+                echo "<br><p id=" . $tab[0] . " class=mouse style='color:red;'>" . $_GET["username"] . " : " . $tab[1] . "<button type='button' id=" . $tab[0] . " class='report-btn' onclick='suppr(this);'>supprimer</button></p>";
             }
         }
         else{
