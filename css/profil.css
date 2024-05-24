@@ -204,3 +204,13 @@ fieldset {
     font-weight: bold;
     font-size: 33px;
 }
+.profile-container .btn2{
+    padding: 15px 23px;
+    color: #ffffff;
+    background-color: #ff4b5c;
+    font-weight: bold;
+}
+.profile-container .btn2:hover{
+    background-color: rgba(211, 9, 9, 0.774);
+    cursor: pointer;
+}

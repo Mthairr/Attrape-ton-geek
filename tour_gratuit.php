@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Attrape ton geek</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tour_gratuit.css">
   <meta name="description" content="">
 
   <link rel="icon" href="favicon2.ico" sizes="any">
@@ -32,11 +32,8 @@
         <button id="btn2" onclick="signup()">Sign up</button>
       </div>
   </nav>
-  <div class="title">
-    <h1>Attrape Ton Geek</h1>
-    <br><p>Bienvenue sur Attrape Ton Geek, où les univers virtuels se rencontrent pour créer des liens réels. Rencontrez des esprits brillants qui partagent votre passion pour les jeux, la technologie et la culture geek.</p><br> 
-    <p>Rejoignez-nous dès maintenant et découvrez une communauté où l'amour est codé dans chaque ligne !</p>
-    <button class="btn-freetour" onclick="tour_gratuit()">Tour gratuit</button>
+  <div class="wrapper">
+    <src src="video.mp4" controls>
   </div>
 
 

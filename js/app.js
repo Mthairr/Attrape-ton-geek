@@ -16,6 +16,12 @@ function results_search(){
 function bienvenue()  {
     document.location.href="Bienvenue.php"
 }
+function subscription()  {
+    document.location.href="subscription.php"
+}
+function tour_gratuit()  {
+    document.location.href="tour_gratuit.php"
+}
 
 function rechercher() {
     var termeRecherche = document.getElementById('search').value;
