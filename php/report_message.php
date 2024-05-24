@@ -15,9 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $messageId = intval($_POST['message_id']);
         $fileLines = file("../donnee/message.txt");
         $line = count($fileLines);
-        $_SESSION["oui"] = 1;
         if ($messageId > 0 && $messageId <= explode(";", $fileLines[$line-1])[0]) {
-            $_SESSION["oui"] = 1;
             for($i=0; $i<$line; $i++){
                 $message = array_slice(explode(";", $fileLines[$i]), 0, 4);
                 array_push($message, $_POST["raison"]);
