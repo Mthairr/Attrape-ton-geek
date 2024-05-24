@@ -127,16 +127,17 @@
             });
         }
 
-        function suppr(aa) {
-            var messageId = aa.id;
+        function suppr(message) {
+            var messageId = message.id;
             $.ajax({
                 url: 'php/supprime_message.php',
                 type: 'POST',
-                data: { message_id: messageId},
+                data: {message_id: messageId},
                 error: function() {
                     alert('Une erreur est survenue. Veuillez réessayer.');
                 }
             });
+            load_messages();
         }
 
         // Fonction pour ajouter le bouton
