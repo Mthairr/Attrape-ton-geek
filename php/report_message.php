@@ -19,9 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($messageId > 0 && $messageId <= explode(";", $fileLines[$line-1])[0]) {
             $_SESSION["oui"] = 1;
             for($i=0; $i<$line; $i++){
-                $message = explode(";", $fileLines[$i]);
+                $message = array_slice(explode(";", $fileLines[$i]), 0, 4);
+                array_push($message, $_POST["raison"]);
                 if($message[0] == $messageId){
-                    file_put_contents('../donnee/reports.txt', implode(";", $message) . "\n", FILE_APPEND);
+                    file_put_contents('../donnee/reports.txt', "\n" . implode(";", $message), FILE_APPEND);
                     echo "Message signalé avec succès.";
                     exit();
                 }
