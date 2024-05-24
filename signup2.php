@@ -48,9 +48,9 @@
                 <div class="input-box">
                     <p>Je suis intérressé :</p>
                     <select class="gender" name="target_gender">
-                        <option value="Man">Homme</option>
-                        <option value="Woman">Femme</option>
-                        <option value="Other">Autre</option>
+                        <option value="Homme">Homme</option>
+                        <option value="Femme">Femme</option>
+                        <option value="Autre">Autre</option>
                     </select>
                 </div>
                 <div class="input-box">
@@ -67,12 +67,12 @@
                 <div class="input-box">
                     <p>Ta couleur des yeux :</p>
                     <select class="eyes" name="eyes">
-                        <option value="Blue">Blue</option>
-                        <option value="Brown">Brown</option>
-                        <option value="Green">Green</option>
-                        <option value="Gray">Gray</option>
-                        <option value="Amber">Amber</option>
-                        <option value="Hazel">Hazel</option>
+                        <option value="Bleue">Bleue</option>
+                        <option value="Marron">Marron</option>
+                        <option value="Vert">Vert</option>
+                        <option value="Gris">Gris</option>
+                        <option value="Noire">Noire</option>
+                        <option value="Albinos">Albinos</option>
                     </select>
                 </div>
                 <button type="submit" class="btn">Sign up</button>
