@@ -27,6 +27,7 @@ foreach ($amis_utilisateur_connecte as $ligne) {
     $champs = explode(';', $ligne);
     if ($champs[0] === $utilisateur_connecte && $champs[1] === $ami_username) {
         echo json_encode(["success" => false, "message" => "Ami déjà ajouté."]);
+        header("Location: ../profil.php?username=$ami_username");
         exit;
     }
 }

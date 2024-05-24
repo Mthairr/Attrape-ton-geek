@@ -48,6 +48,7 @@ else{
                 $_SESSION['eyes'] = $tab[11];
                 $_SESSION['target_gender'] = $tab[12];
                 $_SESSION["admin"] = 0;
+                $_SESSION['abonnement']=$tab[13];
                 header('Location: ../Bienvenue.php');
                 exit();
             }
