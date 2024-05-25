@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+if (count($_COOKIE) > 0) {
+    if (empty($_SESSION["name"])) {
+        header('Location: php/page3.php');
+        exit();
+    }
+} else {
+    header('Location: index.php');
+    exit();
+}
+
+if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
+    header('Location: subscription.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -16,7 +35,6 @@
             <button class="logout" type="submit" name="log_out">Log out</button>
         </form>
         <?php
-            session_start();
             if($_SESSION["admin"] == 1){
                 echo '<button class="admin" type="submit" onclick="document.location.href=' . "'admin.php';" . '">Return admin mode</button>';
             }

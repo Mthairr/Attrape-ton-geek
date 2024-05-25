@@ -10,6 +10,11 @@
         header('Location: ../index.php');
     }
 
+ if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
+     echo "Vous devez être abonné pour accéder à la messagerie.";
+     exit();
+ }
+
     $fileLines = count(file("../donnee/message.txt"));
     $file = fopen("../donnee/message.txt", "c+");
     for($i=1; $i<=$fileLines; $i++){
