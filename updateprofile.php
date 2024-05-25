@@ -183,26 +183,26 @@
             <div class="input-box">
                 <p>Je suis un :</p>
                 <select class="gender" name="sexualindentity">
-                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Man')
-                        echo 'selected'; ?>>Man</option>
-                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Woman')
-                        echo 'selected'; ?>>Woman
+                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Homme')
+                        echo 'selected'; ?>>Homme</option>
+                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Femme')
+                        echo 'selected'; ?>>Femme
                     </option>
-                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Other')
-                        echo 'selected'; ?>>Other
+                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Autre')
+                        echo 'selected'; ?>>Autre
                     </option>
                 </select>
             </div>
             <div class="input-box">
                 <p>Je suis intéressé par :</p>
                 <select class="gender" name="target_gender">
-                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Man')
-                        echo 'selected'; ?>>Man</option>
-                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Woman')
-                        echo 'selected'; ?>>Woman
+                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Homme')
+                        echo 'selected'; ?>>Homme</option>
+                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Femme')
+                        echo 'selected'; ?>>Femme
                     </option>
-                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Other')
-                        echo 'selected'; ?>>Other
+                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Autre')
+                        echo 'selected'; ?>>Autre
                     </option>
                 </select>
             </div>
@@ -220,23 +220,23 @@
             <div class="input-box">
                 <p>Couleur de vos yeux :</p>
                 <select class="eyes" name="eyes">
-                    <option value="Blue" <?php if ($_SESSION['eyes'] == 'Blue')
-                        echo 'selected'; ?>>Blue
+                    <option value="Blue" <?php if ($_SESSION['eyes'] == 'Bleue')
+                        echo 'selected'; ?>>Bleue
                     </option>
-                    <option value="Brown" <?php if ($_SESSION['eyes'] == 'Brown')
-                        echo 'selected'; ?>>Brown
+                    <option value="Brown" <?php if ($_SESSION['eyes'] == 'Marron')
+                        echo 'selected'; ?>>Marron
                     </option>
-                    <option value="Green" <?php if ($_SESSION['eyes'] == 'Green')
-                        echo 'selected'; ?>>Green
+                    <option value="Green" <?php if ($_SESSION['eyes'] == 'Vert')
+                        echo 'selected'; ?>>Vert
                     </option>
-                    <option value="Gray" <?php if ($_SESSION['eyes'] == 'Gray')
-                        echo 'selected'; ?>>Gray
+                    <option value="Gray" <?php if ($_SESSION['eyes'] == 'Gris')
+                        echo 'selected'; ?>>Gris
                     </option>
-                    <option value="Amber" <?php if ($_SESSION['eyes'] == 'Amber')
-                        echo 'selected'; ?>>Amber
+                    <option value="Amber" <?php if ($_SESSION['eyes'] == 'Noire')
+                        echo 'selected'; ?>>Noire
                     </option>
-                    <option value="Hazel" <?php if ($_SESSION['eyes'] == 'Hazel')
-                        echo 'selected'; ?>>Hazel
+                    <option value="Hazel" <?php if ($_SESSION['eyes'] == 'Albinos')
+                        echo 'selected'; ?>>Albinos
                     </option>
                 </select>
             </div>
