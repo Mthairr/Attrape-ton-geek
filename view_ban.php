@@ -13,7 +13,11 @@
 <?php
     session_start();
 
-    if(count($_COOKIE) == 0){
+    if (count($_COOKIE) > 0) {
+        if (empty($_SESSION["name"])) {
+            header('Location: php/page3.php');
+        }
+    }else {
         header('Location: index.php');
     }
 

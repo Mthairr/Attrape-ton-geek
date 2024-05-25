@@ -32,9 +32,12 @@
 
     <?php
     session_start();
-    if (!isset($_SESSION['username'])) {
-        header("Location: index.php");
-        exit;
+    if (count($_COOKIE) > 0) {
+        if (empty($_SESSION["name"])) {
+            header('Location: php/page3.php');
+        }
+    }else {
+        header('Location: index.php');
     }
 
     $username_connecte = $_SESSION['username'];

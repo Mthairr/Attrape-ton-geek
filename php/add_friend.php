@@ -1,9 +1,13 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit;
+if(count($_COOKIE) > 0){
+    if(empty($_SESSION["name"])){
+        header('Location: page3.php');
+    }
+}
+else{
+    header('Location: ../index.php');
 }
 
 if (!isset($_POST['ami_username'])) {

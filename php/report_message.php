@@ -3,11 +3,11 @@ session_start();
 
 if(count($_COOKIE) > 0){
     if(empty($_SESSION["name"])){
-        header('Location: php/page3.php');
+        header('Location: page3.php');
     }
 }
 else{
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

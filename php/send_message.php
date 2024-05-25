@@ -1,9 +1,13 @@
  <?php
     session_start();
 
-    if(count($_COOKIE) == 0){
-        header('Location: index.php');
-        exit();
+    if(count($_COOKIE) > 0){
+        if(empty($_SESSION["name"])){
+            header('Location: page3.php');
+        }
+    }
+    else{
+        header('Location: ../index.php');
     }
 
     $fileLines = count(file("../donnee/message.txt"));
