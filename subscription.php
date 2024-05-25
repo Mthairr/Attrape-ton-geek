@@ -46,15 +46,14 @@ else {
                 <div class="single-price">
                     <div class="deal-top">
                         <h3>Classique</h3>
-                        <h4>3.99 <span class="sup">€</span></h4>
+                        <h4>3.99 <span class="sup">€</span> /mois</h4>
                         <p>1 minutes d'essais gratuit</p>
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
-                            <li>Accès à la messagerie</li>
                             <li>1 mois d'abonnement</li>
-                            <li>3</li>
-                            <li>4</li>
+                            <li>Accès à la messagerie</li>
+                            <li>Voir le profil complet des utilisateurs</li>
                         </ul>
                         <div class="btn-area">
                             <form method="post" action="php/abon.php">
@@ -68,14 +67,13 @@ else {
                 <div class="single-price">
                     <div class="deal-top">
                         <h3>Premium</h3>
-                        <h4>6.99<span class="sup">€</span></h4>
+                        <h4>6.99 <span class="sup">€</span> /mois</h4>
                         <p>1 minutes d'essais gratuit</p>                    </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
-                            <li>Messages illimités</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
+                            <li>12 mois d'abonnement</li>
+                            <li>Accès à la messagerie</li>
+                            <li>Voir le profil complet des utilisateurs</li>
                         </ul>
                         <div class="btn-area">
                             <button onclick="abonne()">Je commence dès maintenant</button>
@@ -87,15 +85,14 @@ else {
                 <div class="single-price">
                     <div class="deal-top">
                         <h3>VIP</h3>
-                            <h4>20.99<span class="sup">€</span></h4>
+                            <h4>20.99 <span class="sup">€</span> /mois</h4>
                             <p>1 minutes d'essais gratuit</p>
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
-                            <li>Messages illimités</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
+                            <li>24 mois d'abonnement</li>
+                            <li>Accès à la messagerie</li>
+                            <li>Voir le profil complet des utilisateurs</li>
                         </ul>
                         <div class="btn-area">
                             <button onclick="abonne()">Je commence dès maintenant</button>
