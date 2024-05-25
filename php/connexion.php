@@ -29,6 +29,7 @@
                 $_SESSION['height'] = $tab[10];
                 $_SESSION['eyes'] = $tab[11];
                 $_SESSION['target_gender'] = $tab[12];
+                $_SESSION['abonnement'] = $tab[13];
                 if(isset($_GET["goto"])){
                     header('Location: ../message.php?username=' . $_GET["goto"]);
                     exit();
