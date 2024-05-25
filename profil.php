@@ -2,10 +2,14 @@
 session_start();
 
 // Vérifiez si l'utilisateur est connecté
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit;
-}
+if(count($_COOKIE) > 0){
+        if(empty($_SESSION["name"])){
+            header('Location: php/page3.php');
+        }
+    }
+    else{
+        header('Location: index.php');
+    }
 
 // Vérifiez si un pseudo est passé dans l'URL
 if (!isset($_GET['username'])) {
@@ -101,16 +105,6 @@ if (file_exists('donnee')) {
 </head>
 
 <body>
-    <?php
-    if (count($_COOKIE) > 0) {
-        if (empty($_SESSION["name"])) {
-            header('Location: php/page3.php');
-        }
-    } else {
-        header('Location: index.php');
-    }
-    ?>
-
     <nav class="navbar">
         <img src="img/_6b17619c-9f60-47a6-a1dc-98336a5b2e7a-removebg-preview.png" alt="Logo" class="logo"
             onclick="index()">
@@ -155,7 +149,18 @@ if (file_exists('donnee')) {
         <p>Je suis intéressé par: <?php echo htmlspecialchars($utilisateur_info[12]); ?></p>
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
-        <button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>
+        <?php
+        if($_SESSION["abonnement"] < 1){
+            echo '<button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>';
+        }
+        else{
+            echo "<p>Prenom:" . htmlspecialchars($utilisateur_info[5]) . "</p>";
+            echo "<p>Nom:" . htmlspecialchars($utilisateur_info[6]) . "</p>";
+            echo "<p>Email:" . htmlspecialchars($utilisateur_info[4]) . "</p>";
+            echo "<p>Ville:" . htmlspecialchars($utilisateur_info[8]) . "</p>";
+            echo "<p>Genre intéressé:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
+        }
+        ?>
     </div>
 
 <script>
