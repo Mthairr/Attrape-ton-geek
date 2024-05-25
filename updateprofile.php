@@ -39,27 +39,42 @@
 
     $username_connecte = $_SESSION['username'];
     $fichier = 'donnee/log.txt';
+    $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $utilisateur_info = [];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $username = $_POST['username'];
-        if(empty($_POST["password"])){
-            $password = $_SESSION["password"];
+        if($_SESSION['username'] != $_POST['username']){
+            for($i=0; $i<count($lignes); $i++){
+                $a = explode(";", $lignes[$i])[0];
+                if($a == $_POST['username']){
+                    header("Location: updateprofile.php?d=1");
+                    exit();
+                }
+            }
+            if(file_exists("img/" . $_SESSION['username'] . ".jpg")){
+                rename("img/" . $_SESSION['username'] . ".jpg", "img/" . $_POST['username'] . ".jpg");
+            }
+            if(file_exists("img/" . $_SESSION['username'] . ".jpeg")){
+                rename("img/" . $_SESSION['username'] . ".jpeg", "img/" . $_POST['username'] . ".jpeg");
+            }
+            if(file_exists("img/" . $_SESSION['username'] . ".png")){
+                rename("img/" . $_SESSION['username'] . ".png", "img/" . $_POST['username'] . ".png");
+            }
+            $_SESSION['username'] = $_POST['username'];
         }
-        else{
-            $password = hash('sha512', $_POST["password"]);
+        if(!empty($_POST["password"])){
+            $_SESSION["password"] = hash('sha512', $_POST["password"]);
         }
-        $age = $_POST['age'];
-        $sexualindentity = $_POST['sexualindentity'];
-        $prenom = $_POST['prenom'];
-        $nom = $_POST['nom'];
-        $email = $_POST['email'];
-        $ville = $_POST['ville'];
-        $pays = $_POST['pays'];
-        $adresse = $_POST['adresse'];
-        $target_gender = $_POST['target_gender'];
-        $height = $_POST['height'];
-        $eyes = $_POST['eyes'];
+        $_SESSION['sexualindentity'] = $_POST['sexualindentity'];
+        $_SESSION['prenom'] = $_POST['prenom'];
+        $_SESSION['nom'] = $_POST['nom'];
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['ville'] = $_POST['ville'];
+        $_SESSION['pays'] = $_POST['pays'];
+        $_SESSION['adresse'] = $_POST['adresse'];
+        $_SESSION['target_gender'] = $_POST['target_gender'];
+        $_SESSION['height'] = $_POST['height'];
+        $_SESSION['eyes'] = $_POST['eyes'];
 
         // Handle photo upload
         $photo_ext = null;
@@ -76,7 +91,7 @@
                 echo "<p>$error_message</p>";
             } else {
                 // Check if there's an existing profile picture
-                $existing_photo_path = "img/$username_connecte.*"; // Pattern to match any file for this user
+                $existing_photo_path = "img/" . $_POST['username'] . ".*"; // Pattern to match any file for this user
                 $existing_photos = glob($existing_photo_path);
 
                 // If existing photo(s) found, delete them
@@ -87,30 +102,29 @@
                 // Upload the new profile picture
                 $photo_tmp = $_FILES['img']['tmp_name'];
                 $photo_ext = pathinfo($_FILES['img']['name'], PATHINFO_EXTENSION);
-                $photo_name = $username_connecte . '.' . $photo_ext;
+                $photo_name = $_POST['username'] . '.' . $photo_ext;
                 move_uploaded_file($photo_tmp, "img/$photo_name");
             }
         }
-        $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $nouvelle_lignes = [];
 
         foreach ($lignes as $ligne) {
             $champs = explode(';', $ligne);
             if ($champs[0] === $username_connecte) {
                 $nouvelle_ligne = implode(';', [
-                    $username,
-                    $password,
-                    $age,
-                    $sexualindentity,
-                    $email,
-                    $prenom,
-                    $nom,
-                    $adresse,
-                    $ville,
-                    $pays,
-                    $height,
-                    $eyes,
-                    $target_gender
+                    $_SESSION['username'],
+                    $_SESSION['password'],
+                    $_SESSION['age'],
+                    $_SESSION['sexualindentity'],
+                    $_SESSION['email'],
+                    $_SESSION['prenom'],
+                    $_SESSION['nom'],
+                    $_SESSION['adresse'],
+                    $_SESSION['ville'],
+                    $_SESSION['pays'],
+                    $_SESSION['height'],
+                    $_SESSION['eyes'],
+                    $_SESSION['target_gender']
                 ]);
                 $nouvelle_lignes[] = $nouvelle_ligne;
             } else {
