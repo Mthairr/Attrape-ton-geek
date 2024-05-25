@@ -78,6 +78,19 @@
             <button type="submit" class="btn">Send</button>
             <section id=message></section>
             <?php
+            $fileLines = file('donnee/bloque.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+            for($i=0; $i<count($fileLines); $i++){
+                $message = explode(";", $fileLines[$i]);
+                if($message[0] == $_GET['username'] && $message[1] == $_SESSION['username'] && $_SESSION['admin']!=1){
+                    echo "<p style='color: red;'>L'utilisateur vous a bloqué</p>";
+                    exit();
+                }
+                if($message[1] == $_GET['username'] && $message[0] == $_SESSION['username'] && $_SESSION['admin']!=1){
+                    echo "<p style='color: red;'>Vous avez bloqué l'utilisateur</p>";
+                    exit();
+                }
+            }
+
             if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(isset($_POST["message"]) && !empty($_POST["message"])){
                     $tab = file('donnee/message.txt');

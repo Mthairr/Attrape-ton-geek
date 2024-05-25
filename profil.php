@@ -126,6 +126,24 @@ if (file_exists('donnee')) {
     <div class="profile-container">
         <div class="profile-header">
             <h1>Profil de <?php echo htmlspecialchars($username); ?></h1>
+            <?php
+                $fileLines = file('donnee/bloque.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                $a=0;
+                for($i=0; $i<count($fileLines); $i++){
+                    $message = explode(";", $fileLines[$i]);
+                    if($message[1] == $_GET['username'] && $message[0] == $_SESSION['username']){
+                        $a = 1;
+                        break;
+                    }
+                }
+                if($a){
+                    echo "<button class='admin' type='submit' onclick=document.location.href='php/bloquer.php?username=" . $_GET["username"] . "'>Debloquer</button>";
+                    exit();
+                }
+                else{
+                    echo "<button class='admin' type='submit' onclick=document.location.href='php/bloquer.php?username=" . $_GET["username"] . "'>Bloquer</button>";
+                }
+            ?>
         </div>
 
         <?php
