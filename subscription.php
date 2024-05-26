@@ -78,7 +78,7 @@ else {
                         </ul>
                         <div class="btn-area">
                             <form method="post" action="php/abon.php">
-                                <button type="submit" name="abonnement1">Je commence dès maintenant</button>
+                                <button type="submit" name="abonnement2">Je commence dès maintenant</button>
                             </form>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ else {
                         </ul>
                         <div class="btn-area">
                             <form method="post" action="php/abon.php">
-                                <button type="submit" name="abonnement1">Je commence dès maintenant</button>
+                                <button type="submit" name="abonnement3">Je commence dès maintenant</button>
                             </form>
                         </div>
                     </div>
@@ -111,6 +111,20 @@ else {
 
 
 <script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function verification(){
+        $.ajax({
+            url: 'php/verification_abonnement.php',
+            success: function(response) {
+                document.location.href="non_abonne.php";
+            }
+        });
+    }
+
+    setInterval('verification()', 5000);
+    verification();
+</script>
 </body>
 
 </html>

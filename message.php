@@ -142,6 +142,19 @@ if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
 
         load_messages();
 
+        function verification(){
+            $.ajax({
+                url: 'php/verification_abonnement.php',
+                success: function(response) {
+                    document.location.href="non_abonne.php";
+                }
+            });
+        }
+
+        setInterval('verification()', 5000);
+        verification();
+
+
         function signal(aa) {
             var messageId = aa.id;
             let raison = prompt("Pourquoi le signalement ?");

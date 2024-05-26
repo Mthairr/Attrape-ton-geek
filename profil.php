@@ -168,7 +168,7 @@ if (file_exists('donnee')) {
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
         <?php
-        if($_SESSION["abonnement"] < 1){
+        if($_SESSION["abonnement"] == 0){
             echo '<button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>';
         }
         else{
@@ -213,6 +213,20 @@ if (file_exists('donnee')) {
     }
 </script>
 <script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function verification(){
+        $.ajax({
+            url: 'php/verification_abonnement.php',
+            success: function(response) {
+                document.location.href="non_abonne.php";
+            }
+        });
+    }
+
+    setInterval('verification()', 5000);
+    verification();
+</script>
 
 </body>
 

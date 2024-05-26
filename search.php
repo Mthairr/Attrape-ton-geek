@@ -74,6 +74,20 @@
     ?>
     
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function verification(){
+        $.ajax({
+            url: 'php/verification_abonnement.php',
+            success: function(response) {
+                document.location.href="non_abonne.php";
+            }
+        });
+    }
+
+    setInterval('verification()', 5000);
+    verification();
+</script>
 
 </body>
 </html>
