@@ -155,17 +155,22 @@ if (count($_COOKIE) > 0) {
         function signal(aa) {
             var messageId = aa.id;
             let raison = prompt("Pourquoi le signalement ?");
-            $.ajax({
-                url: 'php/report_message.php',
-                type: 'POST',
-                data: { message_id: messageId,  raison: raison},
-                success: function(response) {
-                    alert('Message signalé avec succès.');
-                },
-                error: function() {
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                }
-            });
+            if(raison.includes(';')){
+                alert("Pas de ;");
+            }
+            else{
+                $.ajax({
+                    url: 'php/report_message.php',
+                    type: 'POST',
+                    data: { message_id: messageId,  raison: raison},
+                    success: function(response) {
+                        alert('Message signalé avec succès.');
+                    },
+                    error: function() {
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                    }
+                });
+            }
         }
 
         function suppr(message) {

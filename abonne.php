@@ -146,18 +146,23 @@
     <script>
         function ban() {
             let raison = prompt("Pourquoi le ban ?");
-            $.ajax({
-                url: 'php/ban.php',
-                type: 'POST',
-                data: {raison: raison},
-                success: function(response) {
-                    alert('utilisateur ban avec succès.');
-                    document.location.href="admin.php";
-                },
-                error: function() {
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                }
-            });
+            if(raison.includes(';')){
+                alert("Pas de ;");
+            }
+            else{
+                $.ajax({
+                    url: 'php/ban.php',
+                    type: 'POST',
+                    data: {raison: raison},
+                    success: function(response) {
+                        alert('utilisateur ban avec succès.');
+                        document.location.href="admin.php";
+                    },
+                    error: function() {
+                        alert('Une erreur est survenue. Veuillez réessayer.');
+                    }
+                });
+            }
         }
 
         function verification(){
