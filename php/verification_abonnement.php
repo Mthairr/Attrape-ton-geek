@@ -50,5 +50,10 @@
         }
         file_put_contents('../donnee/log.txt', implode("\n", $nouvelle_lignes) . ";");
     }
+    else{
+        http_response_code(400);
+        exit();
+    }
+
 
 ?>
