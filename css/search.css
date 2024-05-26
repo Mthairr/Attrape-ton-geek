@@ -2,6 +2,12 @@
     color: #03C988;
 }
 
+
+body{
+
+    background-color:slategray;
+}
+
 h1{
     justify-content: right;
     align-items: center;
@@ -86,20 +92,24 @@ a{
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    
 }
 
 .search select {
     padding: 10px;
+
 }
 
 .select-one {
     width: 100%;
     text-align: left;
     margin-bottom: 10px;
+    
 }
 
 .select-one p {
     margin: 0 0 5px;
+    
 }
 
 .search button {
@@ -110,7 +120,7 @@ a{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
+}   
 
 .search button:hover {
     background-color: #029a75;

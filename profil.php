@@ -168,8 +168,12 @@ if (file_exists('donnee')) {
         <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
         <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
         <?php
-        if($_SESSION["abonnement"] == 0){
-            echo '<button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>';
+        if(is_numeric($_SESSION['abonnement'])){
+            if ($_SESSION['abonnement']==0){
+                echo '<button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>';
+        
+        }
+            
         }
         else{
             echo "<p>Prenom:" . htmlspecialchars($utilisateur_info[5]) . "</p>";

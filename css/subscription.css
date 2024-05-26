@@ -1,6 +1,10 @@
 *{
      color: #03C988;
- }
+}
+
+body{
+    background-color:slategray;
+}
 
 h1{
     justify-content: right;
