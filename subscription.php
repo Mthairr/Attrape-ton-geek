@@ -38,6 +38,18 @@ else {
         <li><a class="active" href="subscription.php">Abonnements</a></li>
     </ul>
 </nav>
+<?php
+if(is_numeric($_SESSION['abonnement'])){
+            if ($_SESSION['abonnement']!=0){
+                header('Location: abonne.php');
+                exit();
+            }
+            }
+            else{
+                header('Location: abonne.php');
+                exit();
+            }
+?>
 <h1>~ Les abonnements ~</h1>
 <div class="pricing-area">
     <div class="container">

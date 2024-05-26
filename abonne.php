@@ -51,22 +51,22 @@
     if (isset($_SESSION['username'])) {
 
 
-        // Chemin vers le fichier des visites
+        
         $fichier_visites = 'donnee/visites.txt';
         $username_connecte = $_SESSION['username'];
-        // Vérifier si le fichier des visites existe
+        
         $lignes2 = file($fichier_visites, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $nombre_visites=0;
-        // Parcourir chaque ligne
+        
         foreach ($lignes2 as $ligne2) {
-            // Séparer les champs par le délimiteur ';'
+            
             $champs2 = explode(';', $ligne2);
             if ($champs2[0] === $username_connecte) {
                 $nombre_visites = count($champs2) - 1;
 
             }
         }
-            // Amis
+            
         $fichier_amis = 'donnee/friends.txt';
         $amis = [];
         if (file_exists($fichier_amis)) {
@@ -81,28 +81,27 @@
 
 
 
-        // Nom d'utilisateur de l'utilisateur connecté
+        
         $username_connecte = $_SESSION['username'];
         
 
-        // Chemin vers le dossier des images
+        
         $dossierImages = 'img/';
 
-        // Chemin vers le fichier texte
-        // Chemin vers le fichier texteA
+        
         $fichier = 'donnee/log.txt';
 
-        // Vérifier si le fichier existe
+        
         if (file_exists($fichier)) {
-            // Lire le fichier ligne par ligne
+            
             $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-            // Parcourir chaque ligne
+            
             foreach ($lignes as $ligne) {
-                // Séparer les champs par le délimiteur ';'
+                
                 $champs = explode(';', $ligne);
-                // Vérifier si le nom d'utilisateur de la ligne correspond au nom d'utilisateur de l'utilisateur connecté
+                
                 if ($champs[0] === $username_connecte) {
-                    // Vérifier si une image correspondante existe (png, jpg, jpeg)
+                    
                     $cheminImage = $dossierImages . $username_connecte . '.png';
                     if (!file_exists($cheminImage)) {
                         $cheminImage = $dossierImages . $username_connecte . '.jpg';
@@ -110,7 +109,7 @@
                     if (!file_exists($cheminImage)) {
                         $cheminImage = $dossierImages . $username_connecte . '.jpeg';
                     }
-                    // Afficher les informations de l'utilisateur
+                    
                     echo '<h2>Bienvenue, ' . htmlspecialchars($username_connecte) . '!</h2>';
                     if (file_exists($cheminImage)) {
                         echo '<img src="' . htmlspecialchars($cheminImage) . '" alt="Photo de profil" style="max-width: 150px; max-height: 150px; margin-right: 10px;">';
