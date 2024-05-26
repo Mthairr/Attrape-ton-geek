@@ -46,6 +46,10 @@
     $utilisateur_info = [];
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if(!(strpos($_POST["email"], ';') === false) || !(strpos($_POST["lastname"], ';') === false) || !(strpos($_POST["adress"], ';') === false) || !(strpos($_POST["town"], ';') === false) || !(strpos($_POST["country"], ';') === false) || !(strpos($_POST["character"], ';') === false) || !(strpos($_POST["description"], ';') === false) || !(strpos($_POST["username"], ';') === false)){
+            header("Location: updateprofile.php?d=1");
+            exit();
+        }
         if ($_SESSION['username'] != $_POST['username']) {
             for ($i = 0; $i < count($lignes); $i++) {
                 $a = explode(";", $lignes[$i])[0];
@@ -81,7 +85,6 @@
         $_SESSION['eyes'] = $_POST["eyes"];
         $_SESSION['target_gender'] = $_POST["target_gender"];
         $_SESSION['description'] = $_POST["description"];
-
         
         $photo_ext = null;
         if (isset($_FILES['img']) && $_FILES['img']['error'] === UPLOAD_ERR_OK) {
