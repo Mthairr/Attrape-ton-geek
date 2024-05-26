@@ -128,29 +128,30 @@
         $height = $_SESSION['height'];
         $eyes = $_SESSION['eyes'];
         $description = $_SESSION['description'];
+        $abonnement = $_SESSION['abonnement'];
 
         foreach ($lignes as $ligne) {
             $champs = explode(';', $ligne);
             if ($champs[0] === $username_connecte) {
                 $nouvelle_ligne = implode(';', [
-                    $username,
-                    $password,
-                    $age,
-                    $sexualindentity,
-                    $email,
-                    $prenom,
-                    $nom,
-                    $adresse,
-                    $ville,
-                    $pays,
-                    $character,
-                    $game,
-                    $type_game,
-                    $height,
-                    $eyes,
-                    $target_gender,
-                    $description,
-                    $abonnement
+                $username,
+                $password,
+                $age,
+                $sexualindentity,
+                $email,
+                $prenom,
+                $nom,
+                $adresse,
+                $ville,
+                $pays,
+                $character,
+                $game,
+                $type_game,
+                $height,
+                $eyes,
+                $target_gender,
+                $description,
+                $abonnement
                 ]);
                 $nouvelle_lignes[] = $nouvelle_ligne;
             } else {
