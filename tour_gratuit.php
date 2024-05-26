@@ -33,7 +33,9 @@
       </div>
   </nav>
   <div class="wrapper">
-    <src src="video.mp4" controls>
+      <video src="video/video1.mp4" controls>
+          Ton navigateur ne supporte pas le format vidéo
+      </video>
   </div>
 
 
