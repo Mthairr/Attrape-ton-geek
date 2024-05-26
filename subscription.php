@@ -105,7 +105,7 @@ if(is_numeric($_SESSION['abonnement'])){
                     </div>
                     <div class="deal-bottom">
                         <ul class="deal-items">
-                            <li>24 mois d'abonnement</li>
+                            <li>A vie</li>
                             <li>Accès à la messagerie</li>
                             <li>Voir le profil complet des utilisateurs</li>
                         </ul>
