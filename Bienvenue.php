@@ -47,6 +47,17 @@
     <?php
     if (isset($_SESSION['username'])) {
 
+        if(is_numeric($_SESSION['abonnement'])){
+            if ($_SESSION['abonnement']!=0){
+                header('Location: abonne.php');
+                exit();
+            }
+        }
+        else{
+            header('Location: abonne.php');
+            exit();
+        }
+
 
         // Chemin vers le fichier des visites
         $fichier_visites = 'donnee/visites.txt';
