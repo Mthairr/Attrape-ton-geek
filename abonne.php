@@ -15,12 +15,11 @@
         if (empty($_SESSION["name"])) {
             header('Location: php/page3.php');
         }
-        else if (empty($_SESSION["abonnement"])) {
+        else if(empty($_SESSION["abonnement"])) {
             header('Location: Bienvenue.php');
         }
 
     }
-    
     else {
         header('Location: index.php');
     }
@@ -34,9 +33,7 @@
         <?php
         if ($_SESSION["admin"] == 1) {
             echo '<button class="admin" type="submit" onclick="document.location.href=' . "'admin.php';" . '">Return admin mode</button>';
-            echo '<form method="post" action="php/ban.php" enctype="multipart/form-data"> 
-                        <button class="admin" type="submit" class="btn">Bannir utilisateur</button>
-                </form>';
+            echo '<button class="admin" type="button" class="btn" onclick="ban();">Bannir utilisateur</button>';
         }
         ?>
         <ul class="menu">
@@ -146,5 +143,35 @@
     }
     ?>
     <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function ban() {
+            let raison = prompt("Pourquoi le ban ?");
+            $.ajax({
+                url: 'php/ban.php',
+                type: 'POST',
+                data: {raison: raison},
+                success: function(response) {
+                    alert('utilisateur ban avec succès.');
+                    document.location.href="admin.php";
+                },
+                error: function() {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                }
+            });
+        }
+
+        function verification(){
+            $.ajax({
+                url: 'php/verification_abonnement.php',
+                success: function(response) {
+                    document.location.href="non_abonne.php";
+                }
+            });
+        }
+
+        setInterval('verification()', 5000);
+        verification();
+    </script>
 </body>
 </html>

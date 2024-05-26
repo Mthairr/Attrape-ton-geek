@@ -10,6 +10,9 @@
 </head>
 <body>
 <h1>Vous n'êtes plus abonné</h1>
+<?php
+session_start();
+echo $_SESSION["abonnement"]; ?>
 
 <script src="js/app.js"></script>
 </body>
