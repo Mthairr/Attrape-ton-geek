@@ -36,12 +36,12 @@
                 if(isset($_POST["abonnement1"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+1 month');
-                    $abonnement->format('Y-m-d');
+                    $abonnement_form=$abonnement->format('Y-m-d');
                 }
                 else if(isset($_POST["abonnement2"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+12 month');
-                    $abonnement->format('Y-m-d');
+                    $abonnement_form=$abonnement->format('Y-m-d');
                 }
                 else{
                     $abonnement = "1";
@@ -70,7 +70,7 @@
                             $eyes,
                             $target_gender,
                             $description,
-                            $abonnement
+                            $abonnement_form
                         ]);
                         $nouvelle_lignes[] = $nouvelle_ligne;
                     } else {
