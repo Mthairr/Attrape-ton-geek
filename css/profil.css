@@ -215,3 +215,17 @@ fieldset {
     background-color: rgba(211, 9, 9, 0.774);
     cursor: pointer;
 }
+.friend_list {
+    color: rgba(3, 201, 136, 1);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.friend_list:hover {
+    background-color: rgba(3, 201, 136, 0.8);
+    color: #FFFFFF;
+    border: 2px solid rgba(3, 201, 136, 0.8);
+}

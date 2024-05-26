@@ -131,9 +131,9 @@
                     echo '<p><strong>Type de jeu vidéo préféré:</strong> ' . htmlspecialchars($champs[12]) . '</p>';
                     echo '<p><strong>Description:</strong> ' . htmlspecialchars($champs[16]) . '</p>';
                     echo '<p><strong>Nombre d\'amis :</strong> ' . count($amis) . '</p>';
-                    echo '<p><a href="friend_list.php">Voir la liste des amis</a></p>';
+                    echo '<p><a href="friend_list.php" class="friend_list">Voir la liste des amis</a></p>';
                     echo '<p><strong>Nombre de visites :</strong>   ' . $nombre_visites . '</p>';
-                    echo '<p><a href="visit_list.php">Voir la liste des visiteurs</a></p>';
+                    echo '<p><a href="visit_list.php" class="friend_list">Voir la liste des visiteurs</a></p>';
                 }
             }
         } else {

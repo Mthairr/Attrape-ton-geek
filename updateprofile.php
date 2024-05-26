@@ -226,13 +226,13 @@
             <div class="input-box">
                 <p>Je suis un :</p>
                 <select class="gender" name="sexualindentity">
-                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Homme')
+                    <option value="Homme" <?php if ($_SESSION['target_gender'] == 'Homme')
                         echo 'selected'; ?>>Homme
                     </option>
-                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Femme')
+                    <option value="Femme" <?php if ($_SESSION['target_gender'] == 'Femme')
                         echo 'selected'; ?>>Femme
                     </option>
-                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Autre')
+                    <option value="Autre" <?php if ($_SESSION['target_gender'] == 'Autre')
                         echo 'selected'; ?>>Autre
                     </option>
                 </select>
@@ -240,13 +240,13 @@
             <div class="input-box">
                 <p>Je suis intéressé par :</p>
                 <select class="gender" name="target_gender">
-                    <option value="Man" <?php if ($_SESSION['target_gender'] == 'Homme')
+                    <option value="Homme" <?php if ($_SESSION['target_gender'] == 'Homme')
                         echo 'selected'; ?>>Homme
                     </option>
-                    <option value="Woman" <?php if ($_SESSION['target_gender'] == 'Femme')
+                    <option value="Femme" <?php if ($_SESSION['target_gender'] == 'Femme')
                         echo 'selected'; ?>>Femme
                     </option>
-                    <option value="Other" <?php if ($_SESSION['target_gender'] == 'Autre')
+                    <option value="Autre" <?php if ($_SESSION['target_gender'] == 'Autre')
                         echo 'selected'; ?>>Autre
                     </option>
                 </select>
@@ -255,7 +255,7 @@
                 <p>Votre taille :</p>
                 <select class="height" name="height">
                     <?php
-                    for ($i = 0; $i <= 230; $i++) {
+                    for ($i = 130; $i <= 230; $i++) {
                         $selected = ($i == $_SESSION['height']) ? 'selected' : '';
                         echo "<option value=\"$i\" $selected>$i cm</option>";
                     }
@@ -265,22 +265,22 @@
             <div class="input-box">
                 <p>Couleur de vos yeux :</p>
                 <select class="eyes" name="eyes">
-                    <option value="Blue" <?php if ($_SESSION['eyes'] == 'Bleue')
+                    <option value="Bleue" <?php if ($_SESSION['eyes'] == 'Bleue')
                         echo 'selected'; ?>>Bleue
                     </option>
-                    <option value="Brown" <?php if ($_SESSION['eyes'] == 'Marron')
+                    <option value="Marron" <?php if ($_SESSION['eyes'] == 'Marron')
                         echo 'selected'; ?>>Marron
                     </option>
-                    <option value="Green" <?php if ($_SESSION['eyes'] == 'Vert')
+                    <option value="Vert" <?php if ($_SESSION['eyes'] == 'Vert')
                         echo 'selected'; ?>>Vert
                     </option>
-                    <option value="Gray" <?php if ($_SESSION['eyes'] == 'Gris')
+                    <option value="Gris" <?php if ($_SESSION['eyes'] == 'Gris')
                         echo 'selected'; ?>>Gris
                     </option>
-                    <option value="Amber" <?php if ($_SESSION['eyes'] == 'Noire')
+                    <option value="Noire" <?php if ($_SESSION['eyes'] == 'Noire')
                         echo 'selected'; ?>>Noire
                     </option>
-                    <option value="Hazel" <?php if ($_SESSION['eyes'] == 'Albinos')
+                    <option value="Albinos" <?php if ($_SESSION['eyes'] == 'Albinos')
                         echo 'selected'; ?>>Albinos
                     </option>
                 </select>
