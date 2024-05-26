@@ -32,6 +32,7 @@
                 $height = $_SESSION['height'];
                 $eyes = $_SESSION['eyes'];
                 $description = $_SESSION['description'];
+
                 if(isset($_POST["abonnement1"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+1 month');
