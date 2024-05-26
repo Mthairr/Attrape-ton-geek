@@ -44,7 +44,7 @@
                     $abonnement_form=$abonnement->format('Y-m-d');
                 }
                 else{
-                    $abonnement = "1";
+                    $abonnement_form = "1";
                 }
                 $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
                 $nouvelle_lignes = [];
@@ -77,8 +77,8 @@
                         $nouvelle_lignes[] = $ligne;
                     }
                 }
-                file_put_contents($fichier, implode("\n", $nouvelle_lignes) . ";"); 
-                $_SESSION['abonnement']=$abonnement;
+                file_put_contents($fichier, implode("\n", $nouvelle_lignes));
+                $_SESSION['abonnement']=$abonnement_form;
                 header('Location: ../abonne.php');
                 exit;
                 
