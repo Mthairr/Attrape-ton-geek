@@ -15,7 +15,13 @@
         if (empty($_SESSION["name"])) {
             header('Location: php/page3.php');
         }
-    }else {
+        else if (empty($_SESSION["abonnement"])) {
+            header('Location: Bienvenue.php');
+        }
+
+    }
+    
+    else {
         header('Location: index.php');
     }
     ?>
