@@ -14,7 +14,7 @@
             
             $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
             
-            if(isset($_POST["abonnement1"])){
+            if(isset($_POST["abonnement1"]) || isset($_POST["abonnement2"]) || isset($_POST["abonnement3"])){
                 $username = $_SESSION['username'];
                 $password = $_SESSION["password"];
                 $age = $_SESSION["age"];
@@ -28,7 +28,14 @@
                 $target_gender = $_SESSION['target_gender'];
                 $height = $_SESSION['height'];
                 $eyes = $_SESSION['eyes'];
-                $abonnement = 1;
+                if(isset($_POST["abonnement1"])){
+                    $abonnement = new DateTime();
+                    $abonnement->modify('-1 month');
+                }
+                if(isset($_POST["abonnement2"])){
+                    $abonnement = new DateTime();
+                    $abonnement->modify('+12 month');
+                }
                 $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
                 $nouvelle_lignes = [];
 
@@ -49,7 +56,7 @@
                             $height,
                             $eyes,
                             $target_gender,
-                            $abonnement
+                            (isset($_POST["abonnement3"])) ? 1 : $abonnement->format('Y-m-d')
                         ]);
                         $nouvelle_lignes[] = $nouvelle_ligne;
                     } else {
