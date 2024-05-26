@@ -12,7 +12,7 @@ if($_SESSION["admin"]==1){
     $filePath = '../donnee/log.txt';
     $fichierban = '../donnee/ban.txt';
     $nom_utilisateur_a_supprimer = $_SESSION['username'];
-    file_put_contents('../donnee/ban.txt', $_SESSION["email"] . ";" . "\n", FILE_APPEND);
+    file_put_contents('../donnee/ban.txt', $_SESSION["email"] . ";" . $_POST["raison"] . ";" ."\n", FILE_APPEND);
 
 
     $sessionUsername = $_SESSION['username'];
@@ -35,6 +35,5 @@ if($_SESSION["admin"]==1){
 
 
     echo "La ligne contenant le nom d'utilisateur a été supprimée avec succès !";
-    header('Location: ../Bienvenue.php');
     exit();
 }
