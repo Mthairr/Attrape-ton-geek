@@ -46,7 +46,24 @@
                     <input type="file" name="img" accept="image/png, image/jpeg">
                 </div>
                 <div class="input-box">
-                    <p>Je suis intérressé :</p>
+                    <input type="text" placeholder="Ton personnage de jeux vidéo préféré" class="text1" name="character">
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Ton jeux vidéo préféré" class="text1" name="game">
+                </div>
+                <div class="input-box">
+                    <p>Ton genre de jeux vidéo préféré :</p>
+                    <select class="type_game" name="type_game">
+                        <option value="FPS">FPS</option>
+                        <option value="RPG">RPG</option>
+                        <option value="MMORPG">MMORPG</option>
+                        <option value="MOBA">MOBA</option>
+                        <option value="Jeux d'horreur">Jeux d'horreur</option>
+                        <option value="Jeux de plateforme">Jeux de plateforme (Super Mario etc)</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <p>Je suis intérressé par :</p>
                     <select class="gender" name="target_gender">
                         <option value="Homme">Homme</option>
                         <option value="Femme">Femme</option>
@@ -58,7 +75,7 @@
                     <select class="height" name="height" >
                     <?php
                     session_start();
-                    for ($i = 0; $i <= 230; $i++) {
+                    for ($i = 0; $i <= 130; $i++) {
                         echo "<option value=\"$i\">$i cm</option>";
                     }
                     ?>
@@ -74,6 +91,9 @@
                         <option value="Noire">Noire</option>
                         <option value="Albinos">Albinos</option>
                     </select>
+                </div>
+                <div class="input-box">
+                    <input type="textaera" placeholder="Décris toi en quelques phrases" class="text1" name="description">
                 </div>
                 <button type="submit" class="btn">Sign up</button>
                 <?php
