@@ -177,12 +177,13 @@ if (file_exists('donnee')) {
             echo "<p>Aucune photo de profil.</p>";
         }
         ?>
+        <p>Genre: <?php echo htmlspecialchars($utilisateur_info[3]); ?></p>
         <p>Email: <?php echo htmlspecialchars($utilisateur_info[4]); ?></p>
         <p>Ville: <?php echo htmlspecialchars($utilisateur_info[8]); ?></p>
         <p>Pays: <?php echo htmlspecialchars($utilisateur_info[9]); ?></p>
-        <p>Je suis intéressé par: <?php echo htmlspecialchars($utilisateur_info[12]); ?></p>
-        <p>Taille: <?php echo htmlspecialchars($utilisateur_info[10]); ?> cm</p>
-        <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[11]); ?></p>
+        <p>Intéressé par: <?php echo htmlspecialchars($utilisateur_info[15]); ?></p>
+        <p>Taille: <?php echo htmlspecialchars($utilisateur_info[13]); ?> cm</p>
+        <p>Couleur des yeux: <?php echo htmlspecialchars($utilisateur_info[14]); ?></p>
         <?php
         if(is_numeric($_SESSION['abonnement'])){
             if ($_SESSION['abonnement']==0){
@@ -193,7 +194,10 @@ if (file_exists('donnee')) {
                     echo "<p>Nom:" . htmlspecialchars($utilisateur_info[6]) . "</p>";
                     echo "<p>Email:" . htmlspecialchars($utilisateur_info[4]) . "</p>";
                     echo "<p>Ville:" . htmlspecialchars($utilisateur_info[8]) . "</p>";
-                    echo "<p>Genre intéressé:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
+                    echo "<p>Personnage de jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[10]) . "</p>";
+                    echo "<p>Jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[11]) . "</p>";
+                    echo "<p>Type de jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
+                    echo "<p>Description:" .  htmlspecialchars($utilisateur_info[16]) . "</p>";
                 }
         
         
