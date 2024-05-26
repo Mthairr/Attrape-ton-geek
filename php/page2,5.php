@@ -55,6 +55,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header('Location: ../signup2.php?d=13');
         exit();
     }
+
+    if(!(strpos($_POST["email"], ';') === false) || !(strpos($_POST["name"], ';') === false) || !(strpos($_POST["lastname"], ';') === false) || !(strpos($_POST["adress"], ';') === false) || !(strpos($_POST["town"], ';') === false) || !(strpos($_POST["country"], ';') === false) || !(strpos($_POST["character"], ';') === false) || !(strpos($_POST["description"], ';') === false)){
+        header('Location: ../signup2.php?d=14');
+        exit();
+    }
+
     $fileLines = count(file("../donnee/log.txt"));
     $file = fopen("../donnee/log.txt", "c+");
     for($i=1; $i<=$fileLines; $i++){
@@ -64,6 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             exit();
         }
     }
+
     session_start();
     move_uploaded_file($_FILES["img"]["tmp_name"], "../img/" . $_SESSION["username"] . "." . pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION));
     file_put_contents('../donnee/log.txt', "\n" . $_SESSION["username"] . ';' . $_SESSION["password"] . ';' . $_SESSION["age"] . ';' . $_SESSION["sexualindentity"] . ";" . $_POST["email"] . ';' . $_POST["name"] . ';' . $_POST["lastname"] . ';' . $_POST["adress"] . ";" . $_POST["town"] . ";" . $_POST["country"] . ";" . $_POST["character"] . ";" . $_POST["game"] . ";" . $_POST["type_game"] . ";" . $_POST["height"] . ";" . $_POST["eyes"] . ";" . $_POST["target_gender"] . ";" . $_POST["description"] . ";0", FILE_APPEND);

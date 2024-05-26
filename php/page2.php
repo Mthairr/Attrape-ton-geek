@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         exit();
     }
 
-    if(!(strpos($_POST["username"], ' ') === false) || $_POST["password"] != $_POST["password2"]){
+    if(!(strpos($_POST["username"], ' ') === false) || $_POST["password"] != $_POST["password2"] || !(strpos($_POST["username"], ';') === false)){
         header('Location: ../signup.php?d=1');
         exit();
     }
