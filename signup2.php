@@ -42,9 +42,6 @@
                     <input type="text" placeholder="Ton personnage de jeux vidéo préféré" class="text1" name="character">
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Ton personnage de jeux vidéo préféré" class="text1" name="character">
-                </div>
-                <div class="input-box">
                     <input type="text" placeholder="Ton jeux vidéo préféré" class="text1" name="game">
                 </div>
                 <div class="input-box">
