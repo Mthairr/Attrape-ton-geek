@@ -1,0 +1,217 @@
+* {
+    color: #03C988;
+}
+
+body {
+    color: #03C988;
+    background-color:slategray;
+}
+
+h1 {
+    justify-content: right;
+    align-items: center;
+}
+
+button {
+    border: 3px;
+    height: auto;
+    width: auto;
+}
+
+.navbar {
+    position: fixed;
+    background: linear-gradient(to right, rgba(19, 0, 90, 0.3), rgba(0, 51, 124, 0.3));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 10px 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(3, 201, 136, 0.3);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: rgba(3, 201, 136, 0.3);
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a:hover {
+    background-color: rgba(53, 125, 224, 0.3);
+}
+
+.menu a.active,
+.menu a.active1,
+.menu a.active2,
+.menu a.active3 {
+    background-color: #03C988;
+    color: white;
+}
+
+.logo {
+    height: 75px;
+}
+
+a {
+    text-decoration: none;
+    color: #03C988;
+}
+
+.content {
+    margin-top: 150px;
+}
+
+.content button {
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #03C988;
+    padding: 15px 60px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.content button:hover {
+    background-color: rgba(3, 201, 136, 0.7);
+    cursor: pointer;
+}
+
+fieldset {
+    width: auto;
+}
+
+.navbar form button {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.admin {
+    background-color: #f08811;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: auto;
+}
+
+.input-box {
+    margin: 10px 0;
+}
+
+.input-submit button {
+    color: #ffffff;
+    background-color: #03C988;
+    padding: 10px 190px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.input-submit button:hover {
+    background-color: rgba(3, 201, 136, 0.7);
+    cursor: pointer;
+}
+
+.input-box input,
+.input-box select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.profile-container {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 80px;
+    /* Adjust this value if the navbar height changes */
+}
+
+.add_friend {
+    padding: 11.5px 16px;
+    color: #ffffff;
+    background-color: rgba(255, 94, 6, 0.80);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.add_friend:hover {
+    cursor: pointer;
+    background-color: rgba(255, 94, 6, 0.55);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.add_friend.added {
+    background-color: #4caf50;
+    color: white;
+}
+
+.counters {
+    display: flex;
+    justify-content: center;
+    padding-top: 175px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    text-align: right;
+    font-size: 14px;
+    width: 100%;
+}
+
+.counters fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #19aae8;
+}
+
+.counters p {
+    margin: 0 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.counters p span {
+    display: block;
+    font-weight: bold;
+    font-size: 33px;
+}
+.profile-container .btn2{
+    padding: 15px 23px;
+    color: #ffffff;
+    background-color: #ff4b5c;
+    font-weight: bold;
+}
+.profile-container .btn2:hover{
+    background-color: rgba(211, 9, 9, 0.774);
+    cursor: pointer;
+}
