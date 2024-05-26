@@ -200,6 +200,16 @@ if (file_exists('donnee')) {
                 echo "<p>Description:" .  htmlspecialchars($utilisateur_info[16]) . "</p>";
             }
         }
+        else{
+                echo "<p>Prenom:" . htmlspecialchars($utilisateur_info[5]) . "</p>";
+                echo "<p>Nom:" . htmlspecialchars($utilisateur_info[6]) . "</p>";
+                echo "<p>Email:" . htmlspecialchars($utilisateur_info[4]) . "</p>";
+                echo "<p>Ville:" . htmlspecialchars($utilisateur_info[8]) . "</p>";
+                echo "<p>Personnage de jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[10]) . "</p>";
+                echo "<p>Jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[11]) . "</p>";
+                echo "<p>Type de jeu vidéo préféré:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
+                echo "<p>Description:" .  htmlspecialchars($utilisateur_info[16]) . "</p>";
+        }
         
         ?>
     </div>
