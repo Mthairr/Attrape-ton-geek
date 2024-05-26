@@ -11,10 +11,7 @@ if (count($_COOKIE) > 0) {
     exit();
 }
 
-if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
-    header('Location: subscription.php');
-    exit();
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -48,13 +45,12 @@ if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
     </nav>
     <div class="wrapper">
         <?php
-            if(count($_COOKIE) > 0){
-                if(empty($_SESSION["name"])){
-                    header('Location: php/page3.php');
+
+            if(is_numeric($_SESSION['abonnement'])){
+                if ($_SESSION['abonnement']==0){
+                    echo "Vous devez être abonné pour accéder à la messagerie.";
+                    exit();
                 }
-            }
-            else{
-                header('Location: index.php');
             }
 
             $fileLines = count(file("donnee/log.txt"));
@@ -71,6 +67,7 @@ if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
                 echo '</div>';
                 exit();
             }
+
 
             if($_GET['username'] == $_SESSION['username']){
                 echo "<p id='error'>You can't send message to yourself</p>";
@@ -144,7 +141,7 @@ if (empty($_SESSION['abonnement']) || $_SESSION['abonnement'] == 0) {
 
         function verification(){
             $.ajax({
-                url: 'php/verification_abonnement.php',
+                url: 'verification_abonnement.php',
                 success: function(response) {
                     document.location.href="non_abonne.php";
                 }
