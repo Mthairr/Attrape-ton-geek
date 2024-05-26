@@ -143,6 +143,22 @@ if (file_exists('donnee')) {
                 else{
                     echo "<button class='admin' type='submit' onclick=document.location.href='php/bloquer.php?username=" . $_GET["username"] . "'>Bloquer</button>";
                 }
+                $fileLines2 = file('donnee/friends.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                $b=0;
+                for($i=0; $i<count($fileLines2); $i++){
+                    $message2 = explode(";", $fileLines2[$i]);
+                    if($message2[1] == $_GET['username'] && $message2[0] == $_SESSION['username']){
+                        $b = 1;
+                        break;
+                    }
+                }
+                
+                if($b){
+                    echo "<button class='admin' type='submit' onclick=document.location.href='php/add_friend.php?username=" . $_GET["username"] . "'>Supprimer l'ami</button>";
+                }
+                else{
+                    echo "<button class='admin' type='submit' onclick=document.location.href='php/add_friend.php?username=" . $_GET["username"] . "'>Ajouter en ami</button>";
+                }    
             ?>
         </div>
 
@@ -171,17 +187,19 @@ if (file_exists('donnee')) {
         if(is_numeric($_SESSION['abonnement'])){
             if ($_SESSION['abonnement']==0){
                 echo '<button class="btn2" onclick="subscription()">VOIR LE PROFIL COMPLET</button>';
+            }
+            else{
+                    echo "<p>Prenom:" . htmlspecialchars($utilisateur_info[5]) . "</p>";
+                    echo "<p>Nom:" . htmlspecialchars($utilisateur_info[6]) . "</p>";
+                    echo "<p>Email:" . htmlspecialchars($utilisateur_info[4]) . "</p>";
+                    echo "<p>Ville:" . htmlspecialchars($utilisateur_info[8]) . "</p>";
+                    echo "<p>Genre intéressé:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
+                }
         
-        }
+        
             
         }
-        else{
-            echo "<p>Prenom:" . htmlspecialchars($utilisateur_info[5]) . "</p>";
-            echo "<p>Nom:" . htmlspecialchars($utilisateur_info[6]) . "</p>";
-            echo "<p>Email:" . htmlspecialchars($utilisateur_info[4]) . "</p>";
-            echo "<p>Ville:" . htmlspecialchars($utilisateur_info[8]) . "</p>";
-            echo "<p>Genre intéressé:" .  htmlspecialchars($utilisateur_info[12]) . "</p>";
-        }
+        
         ?>
     </div>
 
