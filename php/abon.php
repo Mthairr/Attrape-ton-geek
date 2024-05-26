@@ -25,9 +25,13 @@
                 $ville = $_SESSION['town'];
                 $pays = $_SESSION['country'];
                 $adresse = $_SESSION['adress'];
+                $character = $_SESSION['character'];
+                $game = $_SESSION['game'];
+                $type_game = $_SESSION['type_game'];
                 $target_gender = $_SESSION['target_gender'];
                 $height = $_SESSION['height'];
                 $eyes = $_SESSION['eyes'];
+                $description = $_SESSION['description'];
                 if(isset($_POST["abonnement1"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+1 month');
@@ -53,9 +57,13 @@
                             $adresse,
                             $ville,
                             $pays,
+                            $character,
+                            $game,
+                            $type_game,
                             $height,
                             $eyes,
                             $target_gender,
+                            $description,
                             (isset($_POST["abonnement3"])) ? 1 : $abonnement->format('Y-m-d')
                         ]);
                         $nouvelle_lignes[] = $nouvelle_ligne;
