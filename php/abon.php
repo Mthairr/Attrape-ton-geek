@@ -35,10 +35,15 @@
                 if(isset($_POST["abonnement1"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+1 month');
+                    $abonnement->format('Y-m-d');
                 }
-                if(isset($_POST["abonnement2"])){
+                else if(isset($_POST["abonnement2"])){
                     $abonnement = new DateTime();
                     $abonnement->modify('+12 month');
+                    $abonnement->format('Y-m-d');
+                }
+                else{
+                    $abonnement = "1";
                 }
                 $lignes = file($fichier, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
                 $nouvelle_lignes = [];
@@ -64,7 +69,7 @@
                             $eyes,
                             $target_gender,
                             $description,
-                            (isset($_POST["abonnement3"])) ? 1 : $abonnement->format('Y-m-d')
+                            $abonnement
                         ]);
                         $nouvelle_lignes[] = $nouvelle_ligne;
                     } else {
